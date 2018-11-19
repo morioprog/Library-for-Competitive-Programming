@@ -1,8 +1,9 @@
 /*
 ・素数判定
   > O(√n)
-[使用例] cout << YES(isPrime(998244353)) << endl;
+[使用例] YES(isPrime(998244353));
 */
+
 bool isPrime(ll n) {
   if (n < 2) return false;
   for (ll i = 2; i * i <= n; ++i) {
@@ -17,6 +18,7 @@ bool isPrime(ll n) {
 [使用例] vb prime = Eratosthenes(100000);
 [備考] nが10^6以下のときに使うべき
 */
+
 inline vb Eratosthenes(const int n) {
   vb r(n+1,true);
   for(int i=2;i*i<=n;++i){
