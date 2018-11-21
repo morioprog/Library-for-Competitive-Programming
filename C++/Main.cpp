@@ -26,7 +26,8 @@ template<typename T> void PV(T &v){int VSIZE=v.size();for(int ii=0;ii<VSIZE;++ii
 #define ER(x)  cerr << #x << " = " << (x) << endl;
 #define ERV(v) {cerr << #v << " : ";for(const auto& xxx : v){cerr << xxx << " ";}cerr << "\n";}
 inline void YES(bool x){cout<<((x)?"YES":"NO")<<endl;} inline void Yes(bool x){cout<<((x)?"Yes":"No")<<endl;}  inline void yes(bool x){cout<<((x)?"yes":"no")<<endl;}
-inline void yES(bool x){cout<<((x)?"yES":"nO")<<endl;} inline void Yay(bool x){cout<<((x)?"Yay!":":(")<<endl;} inline void sankou(bool x,string a,string b){cout<<((x)?(a):(b))<<endl;}
+inline void yES(bool x){cout<<((x)?"yES":"nO")<<endl;} inline void Yay(bool x){cout<<((x)?"Yay!":":(")<<endl;}
+template<typename A,typename B> void sankou(bool x,A a,B b){cout<<((x)?(a):(b))<<endl;}
 #define _overload3(_1,_2,_3,name,...) name
 #define _REP(i,n) REPI(i,0,n)
 #define REPI(i,a,b) for(ll i=ll(a);i<ll(b);++i)
