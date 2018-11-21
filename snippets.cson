@@ -1,0 +1,334 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+# Python Snippet
+'.source.python':
+  'Input multiple numbers to vars':
+    'prefix': 'map(int)'
+    'body': 'map(int,input().split())'
+  'Input multiple numbers to list':
+    'prefix': 'list(int)'
+    'body': 'list(map(int,input().split()))'
+  'Input numbers in multiple lines':
+    'prefix': 'zint'
+    'body': '[int(input()) for _ in range($1)]'
+  'Input strings in multiple lines':
+    'prefix': 'zstr'
+    'body': '[input() for _ in range($1)]'
+  'Input number':
+    'prefix': 'int(input())'
+    'body': 'int(input())'
+  'Get out of FORs':
+    'prefix': 'else/continue/break'
+    'body': """
+      else:
+          continue
+      break
+    """
+  'Import':
+    'prefix': 'import'
+    'body': """
+    from fractions import gcd
+    from collections import defaultdict as dd
+    from collections import Counter as C
+    """
+
+# C++ Snippets
+'.source.cpp':
+  'Template':
+    'prefix': 'template'
+    'body': """
+    #include <bits/stdc++.h>\nusing namespace std;\ntypedef long long ll;       typedef long double ld;  typedef pair<int,int> pii; typedef pair<ll,ll> pll;  typedef vector<int> vi;   typedef vector<ll> vl;\ntypedef vector<string> vst; typedef vector<bool> vb; typedef vector<ld> vld;    typedef vector<pii> vpii; typedef vector<pll> vpll; typedef vector<vector<int> > vvi;\nconst int INF = (0x7FFFFFFFL); const ll INFF = (0x7FFFFFFFFFFFFFFFL);\nconst int MOD = 1e9 + 7;       const int MODD = 998244353;\nconst double PI  = acos(-1.0); const double EPS = 1e-9;\nint dx[9] = { 1, 0, -1,  0,  1, -1, -1, 1, 0 };\nint dy[9] = { 0, 1,  0, -1, -1, -1,  1, 1, 0 };\n#define ln '\\\\n'\n#define scnaf scanf\n#define sacnf scanf\n#define sancf scanf\n#define SS(type, ...)type __VA_ARGS__;MACRO_VAR_Scan(__VA_ARGS__);\ntemplate<typename T> void MACRO_VAR_Scan(T& t){cin >> t;}template<typename First, typename...Rest> void MACRO_VAR_Scan(First& first, Rest&...rest){cin >> first;MACRO_VAR_Scan(rest...);}\n#define SV(type,c,n) vector<type> c(n);for(auto& i:c)cin >> i;\n#define SVV(type,c,n,m) vector<vector<type>> c(n,vector<type>(m));for(auto& r:c)for(auto& i:r)cin >> i;\ntemplate<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(int i=0;i<(int)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}\ntemplate<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<"{"<<j.first<<", "<<j.second<<"}";return o;}\ntemplate<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}\ntemplate<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}\ninline void print(void){cout << endl;}\ntemplate<class Head> void print(Head&& head){cout << head;print();} template<class Head,class... Tail> void print(Head&& head,Tail&&... tail){cout<<head<<" ";print(forward<Tail>(tail)...);}\ntemplate<typename T> void PA(T &a){int ASIZE=sizeof(a)/sizeof(a[0]);for(int ii=0;ii<ASIZE;++ii){cout<<a[ii]<<" \\\\n"[ii==ASIZE-1];}}\ntemplate<typename T> void PV(T &v){int VSIZE=v.size();for(int ii=0;ii<VSIZE;++ii){cout<<v[ii]<<" \\\\n"[ii==VSIZE-1];}}\n#define ER(x)  cerr << #x << " = " << (x) << endl;\n#define ERV(v) {cerr << #v << " : ";for(const auto& xxx : v){cerr << xxx << " ";}cerr << "\\\\n";}\ninline void YES(bool x){cout<<((x)?"YES":"NO")<<endl;} inline void Yes(bool x){cout<<((x)?"Yes":"No")<<endl;}  inline void yes(bool x){cout<<((x)?"yes":"no")<<endl;}\ninline void yES(bool x){cout<<((x)?"yES":"nO")<<endl;} inline void Yay(bool x){cout<<((x)?"Yay!":":(")<<endl;}\ntemplate<typename A,typename B> void sankou(bool x,A a,B b){cout<<((x)?(a):(b))<<endl;}\n#define _overload3(_1,_2,_3,name,...) name\n#define _REP(i,n) REPI(i,0,n)\n#define REPI(i,a,b) for(ll i=ll(a);i<ll(b);++i)\n#define REP(...) _overload3(__VA_ARGS__,REPI,_REP,)(__VA_ARGS__)\n#define _RREP(i,n) RREPI(i,n,0)\n#define RREPI(i,a,b) for(ll i=ll(a);i>=ll(b);--i)\n#define RREP(...) _overload3(__VA_ARGS__,RREPI,_RREP,)(__VA_ARGS__)\n#define EACH(e,v) for(auto& e : v)\n#define PERM(v) sort((v).begin(),(v).end());for(bool c##p=1;c##p;c##p=next_permutation((v).begin(),(v).end()))\n#define ADD(a,b) a=(a+ll(b))%MOD\n#define MUL(a,b) a=(a*ll(b))%MOD\ninline ll MOP(ll x,ll n,ll m=MOD){ll r=1;while(n>0){if(n&1)(r*=x)%=m;(x*=x)%=m;n>>=1;}return r;}\ninline ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}inline ll lcm(ll a,ll b){return a*b/gcd(a,b);}inline ll POW(ll a,ll b){ll c=1ll;do{if(b&1)c*=1ll*a;a*=1ll*a;}while(b>>=1);return c;}\ntemplate<typename T> inline bool between(T x,T a,T b) {return ((a<=x)&&(x<b));}template<class T> inline T sqr(T x){return x*x;}\ntemplate<typename A,typename B> inline bool chmax(A &a,const B &b){if(a<b){a=b;return 1;}return 0;}\ntemplate<typename A,typename B> inline bool chmin(A &a,const B &b){if(a>b){a=b;return 1;}return 0;}\n#define tmax(x,y,z) max((x),max((y),(z)))\n#define tmin(x,y,z) min((x),min((y),(z)))\n#define PB push_back\n#define MP make_pair\n#define all(v) (v).begin(),(v).end()\n#define rall(v) (v).rbegin(),(v).rend()\n#define SORT(v) sort((v).begin(),(v).end())\n#define RSORT(v) sort((v).rbegin(),(v).rend())\n#define EXIST(s,e) (find((s).begin(),(s).end(),(e))!=(s).end())\n#define EXISTST(s,c) (((s).find(c))!=string::npos)\n#define POSL(x,val) (lower_bound(x.begin(),x.end(),val)-x.begin())\n#define POSU(x,val) (upper_bound(x.begin(),x.end(),val)-x.begin())\n#define SZV(a) int((a).size())\n#define SZA(a) sizeof(a)/sizeof(a[0])\n#define ZERO(a) memset(a,0,sizeof(a))\n#define MINUS(a) memset(a,0xff,sizeof(a))\n#define MEMINF(a) memset(a,0x3f,sizeof(a))\n#define FILL(a,b) memset(a,b,sizeof(a))\n#define UNIQUE(v) sort((v).begin(),(v).end());(v).erase(unique((v).begin(),(v).end()),(v).end())\nstruct abracadabra{\n    abracadabra(){\n        cin.tie(0); ios::sync_with_stdio(0);\n        cout << fixed << setprecision(20);\n    };\n} ABRACADABRA;\n//#define int long long\n\n//---------------8<---------------8<---------------8<---------------8<---------------//\n\nsigned main() {\n\n  $1\n\n}
+      """
+
+  # Math
+    # Combination
+
+  'nCr,nPr,nHr O(MAX_N + logMOD)':
+    'prefix': 'Math'
+    'body': "/*\n・組み合わせ, 順列, 重複組み合わせ\n  > 前計算 O(MAX_N + logMOD)\n  > クエリ O(1)\n[使用例]\nCOMinit();                   // MAX_Nまでの前計算\ncout << nCr(n,r) << endl;    // nCr (0 <= (n,r) <= MAX_N)\ncout << nPr(n,r) << endl;    // nPr ( ... )\ncout << nHr(n,r) << endl;    // nHr ( ... )\n*/\n\nconst int MAX_N = 2020202;\nll fac[MAX_N], finv[MAX_N], inv[MAX_N];\nvoid COMinit() {\n    fac[0] = fac[1] = 1;\n    finv[0] = finv[1] = 1;\n    inv[1] = 1;\n    REP(i,2,MAX_N) {\n        fac[i] = fac[i - 1] * i % MOD;\n        inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;\n        finv[i] = finv[i - 1] * inv[i] % MOD;\n    }\n}\nll nCr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*((finv[n-r]*finv[r])%MOD))%MOD; }\nll nPr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*finv[n-r])%MOD; }\nll nHr(ll n, ll r) { if (n==0 && r==0) return 1; else return nCr(n+r-1,r); }"
+  'nCr,nPr,nHr O(MAX_N + logMOD) ':
+    'prefix': 'Combination/COMinit'
+    'body': "/*\n・組み合わせ, 順列, 重複組み合わせ\n  > 前計算 O(MAX_N + logMOD)\n  > クエリ O(1)\n[使用例]\nCOMinit();                   // MAX_Nまでの前計算\ncout << nCr(n,r) << endl;    // nCr (0 <= (n,r) <= MAX_N)\ncout << nPr(n,r) << endl;    // nPr ( ... )\ncout << nHr(n,r) << endl;    // nHr ( ... )\n*/\n\nconst int MAX_N = 2020202;\nll fac[MAX_N], finv[MAX_N], inv[MAX_N];\nvoid COMinit() {\n    fac[0] = fac[1] = 1;\n    finv[0] = finv[1] = 1;\n    inv[1] = 1;\n    REP(i,2,MAX_N) {\n        fac[i] = fac[i - 1] * i % MOD;\n        inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;\n        finv[i] = finv[i - 1] * inv[i] % MOD;\n    }\n}\nll nCr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*((finv[n-r]*finv[r])%MOD))%MOD; }\nll nPr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*finv[n-r])%MOD; }\nll nHr(ll n, ll r) { if (n==0 && r==0) return 1; else return nCr(n+r-1,r); }"
+  'nCr,nPr,nHr O(MAX_N + logMOD)  ':
+    'prefix': 'nCr/nPr/nHr'
+    'body': "/*\n・組み合わせ, 順列, 重複組み合わせ\n  > 前計算 O(MAX_N + logMOD)\n  > クエリ O(1)\n[使用例]\nCOMinit();                   // MAX_Nまでの前計算\ncout << nCr(n,r) << endl;    // nCr (0 <= (n,r) <= MAX_N)\ncout << nPr(n,r) << endl;    // nPr ( ... )\ncout << nHr(n,r) << endl;    // nHr ( ... )\n*/\n\nconst int MAX_N = 2020202;\nll fac[MAX_N], finv[MAX_N], inv[MAX_N];\nvoid COMinit() {\n    fac[0] = fac[1] = 1;\n    finv[0] = finv[1] = 1;\n    inv[1] = 1;\n    REP(i,2,MAX_N) {\n        fac[i] = fac[i - 1] * i % MOD;\n        inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;\n        finv[i] = finv[i - 1] * inv[i] % MOD;\n    }\n}\nll nCr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*((finv[n-r]*finv[r])%MOD))%MOD; }\nll nPr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*finv[n-r])%MOD; }\nll nHr(ll n, ll r) { if (n==0 && r==0) return 1; else return nCr(n+r-1,r); }"
+
+  'nCr O(r)':
+    'prefix': 'Math '
+    'body': "/*\n・nが大きい(rが小さい)ときの組み合わせ\n  > クエリ O(r)\n[使用例] cout << comb(n,r) << endl;\n*/\n\nll comb(ll n, int r) {\n  if (r<0 || n<r) return 0;\n  ll ret=1;\n  REP(i,1,r+1) (ret*=n--)/=i;\n  return ret;\n}"
+  'nCr O(r) ':
+    'prefix': 'Combination'
+    'body': "/*\n・nが大きい(rが小さい)ときの組み合わせ\n  > クエリ O(r)\n[使用例] cout << comb(n,r) << endl;\n*/\n\nll comb(ll n, int r) {\n  if (r<0 || n<r) return 0;\n  ll ret=1;\n  REP(i,1,r+1) (ret*=n--)/=i;\n  return ret;\n}"
+  'nCr O(r)  ':
+    'prefix': 'nCr'
+    'body': "/*\n・nが大きい(rが小さい)ときの組み合わせ\n  > クエリ O(r)\n[使用例] cout << comb(n,r) << endl;\n*/\n\nll comb(ll n, int r) {\n  if (r<0 || n<r) return 0;\n  ll ret=1;\n  REP(i,1,r+1) (ret*=n--)/=i;\n  return ret;\n}"
+
+    # Prime
+  '素数判定 O(√n)':
+    'prefix': 'Math  '
+    'body': "/*\n・素数判定\n  > O(√n)\n[使用例] YES(isPrime(998244353));\n*/\n\nbool isPrime(ll n) {\n  if (n < 2) return false;\n  for (ll i = 2; i * i <= n; ++i) {\n    if (n % i == 0) return false;\n  }\n  return true;\n}"
+  '素数判定 O(√n) ':
+    'prefix': 'Prime'
+    'body': "/*\n・素数判定\n  > O(√n)\n[使用例] YES(isPrime(998244353));\n*/\n\nbool isPrime(ll n) {\n  if (n < 2) return false;\n  for (ll i = 2; i * i <= n; ++i) {\n    if (n % i == 0) return false;\n  }\n  return true;\n}"
+  '素数判定 O(√n)  ':
+    'prefix': 'isPrime'
+    'body': "/*\n・素数判定\n  > O(√n)\n[使用例] YES(isPrime(998244353));\n*/\n\nbool isPrime(ll n) {\n  if (n < 2) return false;\n  for (ll i = 2; i * i <= n; ++i) {\n    if (n % i == 0) return false;\n  }\n  return true;\n}"
+
+  'エラトステネスの篩 O(nloglogn)':
+    'prefix': 'Math   '
+    'body': "/*\n・エラトステネスの篩\n  > O(nloglogn)\n[使用例] vb prime = Eratosthenes(100000);\n[備考] nが10^6以下のときに使うべき\n*/\n\ninline vb Eratosthenes(const int n) {\n  vb r(n+1,true);\n  for(int i=2;i*i<=n;++i){\n    if(r[i]){\n      for(int j=i*2;j<=n;j+=i)r[j]=false;\n    }\n  }\n  if(r.size()>2){r[0]=0;r[1]=0;}\n  else if(r.size()>1){r[0]=0;}\n  return r;\n}"
+  'エラトステネスの篩 O(nloglogn) ':
+    'prefix': 'Prime '
+    'body': "/*\n・エラトステネスの篩\n  > O(nloglogn)\n[使用例] vb prime = Eratosthenes(100000);\n[備考] nが10^6以下のときに使うべき\n*/\n\ninline vb Eratosthenes(const int n) {\n  vb r(n+1,true);\n  for(int i=2;i*i<=n;++i){\n    if(r[i]){\n      for(int j=i*2;j<=n;j+=i)r[j]=false;\n    }\n  }\n  if(r.size()>2){r[0]=0;r[1]=0;}\n  else if(r.size()>1){r[0]=0;}\n  return r;\n}"
+  'エラトステネスの篩 O(nloglogn)  ':
+    'prefix': 'Eratosthenes'
+    'body': "/*\n・エラトステネスの篩\n  > O(nloglogn)\n[使用例] vb prime = Eratosthenes(100000);\n[備考] nが10^6以下のときに使うべき\n*/\n\ninline vb Eratosthenes(const int n) {\n  vb r(n+1,true);\n  for(int i=2;i*i<=n;++i){\n    if(r[i]){\n      for(int j=i*2;j<=n;j+=i)r[j]=false;\n    }\n  }\n  if(r.size()>2){r[0]=0;r[1]=0;}\n  else if(r.size()>1){r[0]=0;}\n  return r;\n}"
+
+      # Divisor
+  '素因数分解(約数の個数) O(√n)':
+    'prefix': 'Math    '
+    'body': "/*\n・素因数分解\n  > O(√n)\n[使用例] map<ll,int> mp = prime_factor(105);\n[応用例] (mpの各要素のsecond)+1を掛け合わせると, nの約数の個数\n*/\n\nmap<ll,int> prime_factor(ll n) {\n  map<ll,int> ret;\n  for (ll i = 2; i * i <= n; i++) {\n    while (n % i == 0) {\n      ++ret[i];\n      n /= i;\n    }\n  }\n  if (n != 1) ret[n] = 1;\n  return ret;\n}"
+  '素因数分解(約数の個数) O(√n) ':
+    'prefix': 'Prime/prime_factor'
+    'body': "/*\n・素因数分解\n  > O(√n)\n[使用例] map<ll,int> mp = prime_factor(105);\n[応用例] (mpの各要素のsecond)+1を掛け合わせると, nの約数の個数\n*/\n\nmap<ll,int> prime_factor(ll n) {\n  map<ll,int> ret;\n  for (ll i = 2; i * i <= n; i++) {\n    while (n % i == 0) {\n      ++ret[i];\n      n /= i;\n    }\n  }\n  if (n != 1) ret[n] = 1;\n  return ret;\n}"
+  '素因数分解(約数の個数) O(√n)  ':
+    'prefix': 'Divisor'
+    'body': "/*\n・素因数分解\n  > O(√n)\n[使用例] map<ll,int> mp = prime_factor(105);\n[応用例] (mpの各要素のsecond)+1を掛け合わせると, nの約数の個数\n*/\n\nmap<ll,int> prime_factor(ll n) {\n  map<ll,int> ret;\n  for (ll i = 2; i * i <= n; i++) {\n    while (n % i == 0) {\n      ++ret[i];\n      n /= i;\n    }\n  }\n  if (n != 1) ret[n] = 1;\n  return ret;\n}"
+  '素因数分解(約数の個数) O(√n)   ':
+    'prefix': 'Yakusuu'
+    'body': "/*\n・素因数分解\n  > O(√n)\n[使用例] map<ll,int> mp = prime_factor(105);\n[応用例] (mpの各要素のsecond)+1を掛け合わせると, nの約数の個数\n*/\n\nmap<ll,int> prime_factor(ll n) {\n  map<ll,int> ret;\n  for (ll i = 2; i * i <= n; i++) {\n    while (n % i == 0) {\n      ++ret[i];\n      n /= i;\n    }\n  }\n  if (n != 1) ret[n] = 1;\n  return ret;\n}"
+
+  '約数列挙 O(√n)':
+    'prefix': 'Math     '
+    'body': "/*\n・約数列挙\n  > O(√n)\n[使用例] vl div = divisor(105);\n[備考] 整列されていない\n*/\n\nvl divisor(ll n) {\n  vl ret;\n  for(ll i = 1; i * i <= n; i++) {\n    if (n % i == 0) {\n      ret.PB(i);\n      if (i * i != n) ret.PB(n/i);\n    }\n  }\n  //SORT(ret);\n  return ret;\n}"
+  '約数列挙 O(√n) ':
+    'prefix': 'Divisor '
+    'body': "/*\n・約数列挙\n  > O(√n)\n[使用例] vl div = divisor(105);\n[備考] 整列されていない\n*/\n\nvl divisor(ll n) {\n  vl ret;\n  for(ll i = 1; i * i <= n; i++) {\n    if (n % i == 0) {\n      ret.PB(i);\n      if (i * i != n) ret.PB(n/i);\n    }\n  }\n  //SORT(ret);\n  return ret;\n}"
+  '約数列挙 O(√n)  ':
+    'prefix': 'Prime  '
+    'body': "/*\n・約数列挙\n  > O(√n)\n[使用例] vl div = divisor(105);\n[備考] 整列されていない\n*/\n\nvl divisor(ll n) {\n  vl ret;\n  for(ll i = 1; i * i <= n; i++) {\n    if (n % i == 0) {\n      ret.PB(i);\n      if (i * i != n) ret.PB(n/i);\n    }\n  }\n  //SORT(ret);\n  return ret;\n}"
+  '約数列挙 O(√n)   ':
+    'prefix': 'Yakusuu '
+    'body': "/*\n・約数列挙\n  > O(√n)\n[使用例] vl div = divisor(105);\n[備考] 整列されていない\n*/\n\nvl divisor(ll n) {\n  vl ret;\n  for(ll i = 1; i * i <= n; i++) {\n    if (n % i == 0) {\n      ret.PB(i);\n      if (i * i != n) ret.PB(n/i);\n    }\n  }\n  //SORT(ret);\n  return ret;\n}"
+
+
+  # Multiprecision
+  '多倍長整数/浮動小数点数':
+    'prefix': 'Multiprecision'
+    'body': "/*\n・多倍長整数 Bint\n[使用例] Bint num;     // 任意精度の符号あり多倍長整数\nhttps://boostjp.github.io/tips/multiprec-int.html\n・多倍長浮動小数点数 Bfloat\n[使用例] Bfloat32 f;   // 仮数部が32bitの符号あり浮動小数点数\nhttps://boostjp.github.io/tips/multiprec-float.html\n*/\n\n#include <boost/multiprecision/cpp_int.hpp>\n#include <boost/multiprecision/cpp_dec_float.hpp>\nusing Bint = boost::multiprecision::cpp_int;\nusing Bfloat32 = boost::multiprecision::number<boost::multiprecision::cpp_dec_float<32> >;\nusing Bfloat1024 = boost::multiprecision::number<boost::multiprecision::cpp_dec_float<1024> >;"
+  '多倍長整数/浮動小数点数 ':
+    'prefix': 'Tabaichou'
+    'body': "/*\n・多倍長整数 Bint\n[使用例] Bint num;     // 任意精度の符号あり多倍長整数\nhttps://boostjp.github.io/tips/multiprec-int.html\n・多倍長浮動小数点数 Bfloat\n[使用例] Bfloat32 f;   // 仮数部が32bitの符号あり浮動小数点数\nhttps://boostjp.github.io/tips/multiprec-float.html\n*/\n\n#include <boost/multiprecision/cpp_int.hpp>\n#include <boost/multiprecision/cpp_dec_float.hpp>\nusing Bint = boost::multiprecision::cpp_int;\nusing Bfloat32 = boost::multiprecision::number<boost::multiprecision::cpp_dec_float<32> >;\nusing Bfloat1024 = boost::multiprecision::number<boost::multiprecision::cpp_dec_float<1024> >;"
+  '多倍長整数/浮動小数点数  ':
+    'prefix': 'Bint/Bfloat'
+    'body': "/*\n・多倍長整数 Bint\n[使用例] Bint num;     // 任意精度の符号あり多倍長整数\nhttps://boostjp.github.io/tips/multiprec-int.html\n・多倍長浮動小数点数 Bfloat\n[使用例] Bfloat32 f;   // 仮数部が32bitの符号あり浮動小数点数\nhttps://boostjp.github.io/tips/multiprec-float.html\n*/\n\n#include <boost/multiprecision/cpp_int.hpp>\n#include <boost/multiprecision/cpp_dec_float.hpp>\nusing Bint = boost::multiprecision::cpp_int;\nusing Bfloat32 = boost::multiprecision::number<boost::multiprecision::cpp_dec_float<32> >;\nusing Bfloat1024 = boost::multiprecision::number<boost::multiprecision::cpp_dec_float<1024> >;"
+
+  # UnionFind
+  'UnionFind木 O(α(n))':
+    'prefix': 'UnionFind'
+    'body': "/*\n・UnionFind木\n  > O(α(n))\n[使用例]\nUnionFind uf(n);    // 頂点数nのUF木を宣言\nuf.unite(a,b);      // 点a,b([0,n))が同じ集合に属する\nbool isSameGroup = uf.same(a,b);  // 点a,bが同じ集合に属するか確認\ncout << uf.find(a) << endl;       // 点aが属する集合を求める\ncout << uf.size(a) << endl;       // 点aが属する集合の要素の数を求める\n*/\n\nstruct UnionFind {\n    vector<int> parent;\n    int __size;\n    UnionFind(int size_) : parent(size_, -1), __size(size_) {}\n    void unite(int x,int y) {\n        if ((x=find(x)) != (y=find(y))) {\n            if (parent[y] < parent[x]) swap(x,y);\n            parent[x] += parent[y];\n            parent[y] = x;\n            __size--;\n        }\n    }\n    bool same(int x,int y){return find(x)==find(y);}\n    int find(int x){return parent[x] < 0 ? x : parent[x] = find(parent[x]);}\n    int size(int x){return -parent[find(x)];}\n    int size(){return __size;}\n};"
+
+  # Graph
+  'グラフの宣言':
+    'prefix': 'Graph'
+    'body': "/*\n・グラフ\n  > Dijkstra\n  > BellmanFord\n  > WarshallFloyd\n[使用例]\nGraph<int> g(N);    // 頂点数N, 重さの型がintのグラフを宣言\nadd_edge(g,a,b,c);  // グラフgに, aからbへの重さcの無向辺を追加\nadd_arc(g,a,b,c);   // グラフgに, aからbへの重さcの有向辺を追加\n*/\n\ntemplate<typename T> struct Edge {\n  int from, to;\n  T weight;\n  Edge() : from(0), to(0), weight(0) {}\n  Edge(int f, int t, T w) : from(f), to(t), weight(w) {}\n};\ntemplate<typename T> using Edges = vector< Edge< T > >;\ntemplate<typename T> using Graph = vector< Edges< T > >;\ntemplate<typename T> void add_edge(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); g[to].emplace_back(to,from,w); }\ntemplate<typename T> void  add_arc(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); }"
+  'グラフの宣言 ':
+    'prefix': 'add_arc/add_edge'
+    'body': "/*\n・グラフ\n  > Dijkstra\n  > BellmanFord\n  > WarshallFloyd\n[使用例]\nGraph<int> g(N);    // 頂点数N, 重さの型がintのグラフを宣言\nadd_edge(g,a,b,c);  // グラフgに, aからbへの重さcの無向辺を追加\nadd_arc(g,a,b,c);   // グラフgに, aからbへの重さcの有向辺を追加\n*/\n\ntemplate<typename T> struct Edge {\n  int from, to;\n  T weight;\n  Edge() : from(0), to(0), weight(0) {}\n  Edge(int f, int t, T w) : from(f), to(t), weight(w) {}\n};\ntemplate<typename T> using Edges = vector< Edge< T > >;\ntemplate<typename T> using Graph = vector< Edges< T > >;\ntemplate<typename T> void add_edge(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); g[to].emplace_back(to,from,w); }\ntemplate<typename T> void  add_arc(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); }"
+
+  'ワーシャルフロイド法 O(V^3)':
+    'prefix': 'Graph '
+    'body': "/*\n・ワーシャルフロイド法\n  > O(V^3) [V:頂点数] (WarshallFloyd())\n  > O(V^2) : 辺の追加 (add_edge_to_matrix())\n[備考] 全点間最短路を求めるアルゴリズム\n      負閉路が存在しているかの検出も可能\n        -> ある頂点vからv自身への最短路が負なが負閉路が存在\n[使用例]\nauto wf = WarshallFloyd(g);      // グラフgにおける全点間最短路\nadd_edge_to_matrix(wf,a,b,c);    // 隣接行列wfに, 始点a, 終点b, 重さcの辺を追加して, wfを更新\n*/\n\ntemplate<typename T> using Matrix = vector< vector< T > >;\ntemplate<typename T> Matrix< T > WarshallFloyd(Graph< T > &g) {\n  const auto INF = numeric_limits< T >::max();\n  int vertex = g.size();\n  Matrix< T > dist(vertex, vector< T >(vertex, INF));\n  for (int i = 0; i < vertex; ++i) dist[i][i] = 0;\n  for (int i = 0; i < vertex; ++i) {\n    for (auto &e : g[i]) {\n      dist[e.from][e.to] = min(dist[e.from][e.to], e.weight);\n    }\n  }\n  for (int k = 0; k < vertex; ++k) {\n    for (int i = 0; i < vertex; ++i) {\n      for (int j = 0; j < vertex; ++j) {\n        if (dist[i][k] != INF && dist[k][j] != INF) {\n          dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);\n        }\n      }\n    }\n  }\n  return dist;\n}\ntemplate<typename T> void add_edge_to_matrix(Matrix< T > &mat, int from, int to, T weight = 1) {\n  const auto INF = numeric_limits< T >::max();\n  mat[from][to] = mat[to][from] = min(mat[from][to], weight);\n  int vertex = mat.size();\n  for (int k : {from, to}) {\n    for (int i = 0; i < vertex; ++i) {\n      for (int j = 0; j < vertex; ++j) {\n        if (mat[i][k] != INF && mat[k][j] != INF) {\n          mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][j]);\n        }\n      }\n    }\n  }\n}"
+  'ワーシャルフロイド法 O(V^3) ':
+    'prefix': 'WarshallFloyd'
+    'body': "/*\n・ワーシャルフロイド法\n  > O(V^3) [V:頂点数] (WarshallFloyd())\n  > O(V^2) : 辺の追加 (add_edge_to_matrix())\n[備考] 全点間最短路を求めるアルゴリズム\n      負閉路が存在しているかの検出も可能\n        -> ある頂点vからv自身への最短路が負なが負閉路が存在\n[使用例]\nauto wf = WarshallFloyd(g);      // グラフgにおける全点間最短路\nadd_edge_to_matrix(wf,a,b,c);    // 隣接行列wfに, 始点a, 終点b, 重さcの辺を追加して, wfを更新\n*/\n\ntemplate<typename T> using Matrix = vector< vector< T > >;\ntemplate<typename T> Matrix< T > WarshallFloyd(Graph< T > &g) {\n  const auto INF = numeric_limits< T >::max();\n  int vertex = g.size();\n  Matrix< T > dist(vertex, vector< T >(vertex, INF));\n  for (int i = 0; i < vertex; ++i) dist[i][i] = 0;\n  for (int i = 0; i < vertex; ++i) {\n    for (auto &e : g[i]) {\n      dist[e.from][e.to] = min(dist[e.from][e.to], e.weight);\n    }\n  }\n  for (int k = 0; k < vertex; ++k) {\n    for (int i = 0; i < vertex; ++i) {\n      for (int j = 0; j < vertex; ++j) {\n        if (dist[i][k] != INF && dist[k][j] != INF) {\n          dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);\n        }\n      }\n    }\n  }\n  return dist;\n}\ntemplate<typename T> void add_edge_to_matrix(Matrix< T > &mat, int from, int to, T weight = 1) {\n  const auto INF = numeric_limits< T >::max();\n  mat[from][to] = mat[to][from] = min(mat[from][to], weight);\n  int vertex = mat.size();\n  for (int k : {from, to}) {\n    for (int i = 0; i < vertex; ++i) {\n      for (int j = 0; j < vertex; ++j) {\n        if (mat[i][k] != INF && mat[k][j] != INF) {\n          mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][j]);\n        }\n      }\n    }\n  }\n}"
+
+  'ダイクストラ法 O(ElogV)':
+    'prefix': 'Graph  '
+    'body': "/*\n・ダイクストラ法\n  > O(ElogV) [E:辺の数, V:頂点の数]\n[備考] 負辺の存在しないグラフに対する単一始点全点間最短路を求めるアルゴリズム\n[使用例]\nauto dij = Dijkstra(g,s);     // グラフgにおける, 始点sからの最短路\n*/\n\ntemplate<typename T> vector< T > Dijkstra(Graph<T> &g, int from) {\n  const auto INF = numeric_limits< T >::max();\n  vector< T > dist(g.size(), INF);\n  dist[from] = 0;\n  using Pi = pair< T, int >;\n  priority_queue< Pi, vector< Pi >, greater< Pi > > que;\n  que.emplace(dist[from], from);\n  while ( !que.empty() ) {\n    T weight; int idx;\n    tie(weight, idx) = que.top(); que.pop();\n    if (dist[idx] < weight) continue;\n    for (auto &e : g[idx]) {\n      auto next_weight = weight + e.weight;\n      if (dist[e.to] <= next_weight) continue;\n      dist[e.to] = next_weight;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n  return dist;\n}"
+  'ダイクストラ法 O(ElogV) ':
+    'prefix': 'Dijkstra'
+    'body': "/*\n・ダイクストラ法\n  > O(ElogV) [E:辺の数, V:頂点の数]\n[備考] 負辺の存在しないグラフに対する単一始点全点間最短路を求めるアルゴリズム\n[使用例]\nauto dij = Dijkstra(g,s);     // グラフgにおける, 始点sからの最短路\n*/\n\ntemplate<typename T> vector< T > Dijkstra(Graph<T> &g, int from) {\n  const auto INF = numeric_limits< T >::max();\n  vector< T > dist(g.size(), INF);\n  dist[from] = 0;\n  using Pi = pair< T, int >;\n  priority_queue< Pi, vector< Pi >, greater< Pi > > que;\n  que.emplace(dist[from], from);\n  while ( !que.empty() ) {\n    T weight; int idx;\n    tie(weight, idx) = que.top(); que.pop();\n    if (dist[idx] < weight) continue;\n    for (auto &e : g[idx]) {\n      auto next_weight = weight + e.weight;\n      if (dist[e.to] <= next_weight) continue;\n      dist[e.to] = next_weight;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n  return dist;\n}"
+
+  'ベルマンフォード法 O(EV)':
+    'prefix': 'Graph   '
+    'body': "/*\n・ベルマンフォード法\n  > O(EV) [E:辺の数, V:頂点の数]\n[備考] グラフ(負辺が存在してもよい)に対する単一始点全点間最短路を求めるアルゴリズム\n      負閉路が存在しているかの判定も可能 -> 存在していたら空列を返す\n[使用例]\nEdges<int> edges;                     // 全ての辺 (重さ: int)\nadd_to_edges(edges,a,b,c);            // 辺集合edgesに, 始点a, 終点b, 重さcの辺を追加\nauto bf = BellmanFord(edges,V,s);     // 辺edges, 頂点数Vのグラフにおける, 始点sからの最短路\n*/\n\ntemplate<typename T> void add_to_edges(Edges< T > &e, int from, int to, T w = 1) { e.emplace_back(from,to,w); }\ntemplate<typename T> vector< T > BellmanFord(Edges< T > &edges, int vertex, int from) {\n  const auto INF = numeric_limits< T >::max();\n  vector< T > dist(vertex, INF);\n  dist[from] = 0;\n  for (int i = 0; i < vertex - 1; ++i) {\n    for (auto &e : edges) {\n      if (dist[e.from] == INF) continue;\n      dist[e.to] = min(dist[e.to], dist[e.from] + e.weight);\n    }\n  }\n  for (auto &e : edges) {\n    if (dist[e.from] == INF) continue;\n    if (dist[e.from] + e.weight < dist[e.to]) return vector< T >();\n  }\n  return dist;\n}"
+  'ベルマンフォード法 O(EV) ':
+    'prefix': 'BellmanFord'
+    'body': "/*\n・ベルマンフォード法\n  > O(EV) [E:辺の数, V:頂点の数]\n[備考] グラフ(負辺が存在してもよい)に対する単一始点全点間最短路を求めるアルゴリズム\n      負閉路が存在しているかの判定も可能 -> 存在していたら空列を返す\n[使用例]\nEdges<int> edges;                     // 全ての辺 (重さ: int)\nadd_to_edges(edges,a,b,c);            // 辺集合edgesに, 始点a, 終点b, 重さcの辺を追加\nauto bf = BellmanFord(edges,V,s);     // 辺edges, 頂点数Vのグラフにおける, 始点sからの最短路\n*/\n\ntemplate<typename T> void add_to_edges(Edges< T > &e, int from, int to, T w = 1) { e.emplace_back(from,to,w); }\ntemplate<typename T> vector< T > BellmanFord(Edges< T > &edges, int vertex, int from) {\n  const auto INF = numeric_limits< T >::max();\n  vector< T > dist(vertex, INF);\n  dist[from] = 0;\n  for (int i = 0; i < vertex - 1; ++i) {\n    for (auto &e : edges) {\n      if (dist[e.from] == INF) continue;\n      dist[e.to] = min(dist[e.to], dist[e.from] + e.weight);\n    }\n  }\n  for (auto &e : edges) {\n    if (dist[e.from] == INF) continue;\n    if (dist[e.from] + e.weight < dist[e.to]) return vector< T >();\n  }\n  return dist;\n}"
+
+  # CumulativeSum
+  '1次元累積和':
+    'prefix': 'CumulativeSum'
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, int x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k)\n  {\n    if(k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n};"
+  '1次元累積和 ':
+    'prefix': 'imos'
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, int x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k)\n  {\n    if(k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n};"
+  '1次元累積和  ':
+    'prefix': 'Accumulate'
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, int x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k)\n  {\n    if(k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n};"
+  '1次元累積和   ':
+    'prefix': 'Ruisekiwa'
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, int x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k)\n  {\n    if(k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n};"
+
+  '2次元累積和':
+    'prefix': 'CumulativeSum2D'
+    'body': "/*\n・2次元累積和\n  >     build O(WH)\n  > add,query O(1)\n[使用例]\nCumulativeSum2D<int> acc(M,N);  // acc[W+1][H+1]\nacc.add(L,R,x);     // 要素(L,R)に値xを加える\nacc.build();        // 累積和を取る\ncout << acc.query(a,b,c,d) << endl;   // [a,b]から(c,d)までの和\n*/\n\ntemplate<class T> struct CumulativeSum2D {\n  vector<vector<T>> data;\n  CumulativeSum2D(int W, int H) : data(W+1,vi(H+1,0)) {}\n  void add(int x, int y, int z) {\n    ++x, ++y;\n    if (x >= data.size() || y >= data[0].size()) return;\n    data[x][y] += z;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); ++i) {\n      for(int j = 1; j < data[i].size(); ++j) {\n        data[i][j] += data[i][j-1] + data[i-1][j] - data[i-1][j-1];\n      }\n    }\n  }\n  T query(int sx, int sy, int gx, int gy) {\n    return (data[gx][gy] - data[sx][gy] - data[gx][sy] + data[sx][sy]);\n  }\n};"
+  '2次元累積和 ':
+    'prefix': 'imos'
+    'body': "/*\n・2次元累積和\n  >     build O(WH)\n  > add,query O(1)\n[使用例]\nCumulativeSum2D<int> acc(M,N);  // acc[W+1][H+1]\nacc.add(L,R,x);     // 要素(L,R)に値xを加える\nacc.build();        // 累積和を取る\ncout << acc.query(a,b,c,d) << endl;   // [a,b]から(c,d)までの和\n*/\n\ntemplate<class T> struct CumulativeSum2D {\n  vector<vector<T>> data;\n  CumulativeSum2D(int W, int H) : data(W+1,vi(H+1,0)) {}\n  void add(int x, int y, int z) {\n    ++x, ++y;\n    if (x >= data.size() || y >= data[0].size()) return;\n    data[x][y] += z;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); ++i) {\n      for(int j = 1; j < data[i].size(); ++j) {\n        data[i][j] += data[i][j-1] + data[i-1][j] - data[i-1][j-1];\n      }\n    }\n  }\n  T query(int sx, int sy, int gx, int gy) {\n    return (data[gx][gy] - data[sx][gy] - data[gx][sy] + data[sx][sy]);\n  }\n};"
+  '2次元累積和  ':
+    'prefix': 'Accumulate'
+    'body': "/*\n・2次元累積和\n  >     build O(WH)\n  > add,query O(1)\n[使用例]\nCumulativeSum2D<int> acc(M,N);  // acc[W+1][H+1]\nacc.add(L,R,x);     // 要素(L,R)に値xを加える\nacc.build();        // 累積和を取る\ncout << acc.query(a,b,c,d) << endl;   // [a,b]から(c,d)までの和\n*/\n\ntemplate<class T> struct CumulativeSum2D {\n  vector<vector<T>> data;\n  CumulativeSum2D(int W, int H) : data(W+1,vi(H+1,0)) {}\n  void add(int x, int y, int z) {\n    ++x, ++y;\n    if (x >= data.size() || y >= data[0].size()) return;\n    data[x][y] += z;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); ++i) {\n      for(int j = 1; j < data[i].size(); ++j) {\n        data[i][j] += data[i][j-1] + data[i-1][j] - data[i-1][j-1];\n      }\n    }\n  }\n  T query(int sx, int sy, int gx, int gy) {\n    return (data[gx][gy] - data[sx][gy] - data[gx][sy] + data[sx][sy]);\n  }\n};"
+  '2次元累積和   ':
+    'prefix': 'Ruisekiwa'
+    'body': "/*\n・2次元累積和\n  >     build O(WH)\n  > add,query O(1)\n[使用例]\nCumulativeSum2D<int> acc(M,N);  // acc[W+1][H+1]\nacc.add(L,R,x);     // 要素(L,R)に値xを加える\nacc.build();        // 累積和を取る\ncout << acc.query(a,b,c,d) << endl;   // [a,b]から(c,d)までの和\n*/\n\ntemplate<class T> struct CumulativeSum2D {\n  vector<vector<T>> data;\n  CumulativeSum2D(int W, int H) : data(W+1,vi(H+1,0)) {}\n  void add(int x, int y, int z) {\n    ++x, ++y;\n    if (x >= data.size() || y >= data[0].size()) return;\n    data[x][y] += z;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); ++i) {\n      for(int j = 1; j < data[i].size(); ++j) {\n        data[i][j] += data[i][j-1] + data[i-1][j] - data[i-1][j-1];\n      }\n    }\n  }\n  T query(int sx, int sy, int gx, int gy) {\n    return (data[gx][gy] - data[sx][gy] - data[gx][sy] + data[sx][sy]);\n  }\n};"
+
+  # Conversion
+  '文字列と整数同士の変換':
+    'prefix': 'Conversion'
+    'body': "/*\n・文字列と整数同士の変換\n[使用例]\ncout << toInt(\"222\") / 2 << endl;   // 111\ncout << toString(222)+2 << endl;    // 224\nll n = 9876; string t;\nntos(n,t);  // t = \"9876\"\nstring s = \"1234\"; ll m;\nston(s,m);  // m = 1234\n*/\n\ninline ll toInt(string s){ll v;istringstream sin(s);sin >> v;return v;}\ntemplate<class T> inline string toString(T x) {ostringstream sout;sout << x;return sout.str();}\ntemplate<typename T> inline void ntos(const T &n,string &s){stringstream stream; stream << n; stream >> s;}\ntemplate<typename T> inline void ston(const string &s,T &n){stringstream stream(s); stream >> n;}"
+  '文字列と整数同士の変換 ':
+    'prefix': 'toString/toInt'
+    'body': "/*\n・文字列と整数同士の変換\n[使用例]\ncout << toInt(\"222\") / 2 << endl;   // 111\ncout << toString(222)+2 << endl;    // 224\nll n = 9876; string t;\nntos(n,t);  // t = \"9876\"\nstring s = \"1234\"; ll m;\nston(s,m);  // m = 1234\n*/\n\ninline ll toInt(string s){ll v;istringstream sin(s);sin >> v;return v;}\ntemplate<class T> inline string toString(T x) {ostringstream sout;sout << x;return sout.str();}\ntemplate<typename T> inline void ntos(const T &n,string &s){stringstream stream; stream << n; stream >> s;}\ntemplate<typename T> inline void ston(const string &s,T &n){stringstream stream(s); stream >> n;}"
+  '文字列と整数同士の変換  ':
+    'prefix': 'ston'
+    'body': "/*\n・文字列と整数同士の変換\n[使用例]\ncout << toInt(\"222\") / 2 << endl;   // 111\ncout << toString(222)+2 << endl;    // 224\nll n = 9876; string t;\nntos(n,t);  // t = \"9876\"\nstring s = \"1234\"; ll m;\nston(s,m);  // m = 1234\n*/\n\ninline ll toInt(string s){ll v;istringstream sin(s);sin >> v;return v;}\ntemplate<class T> inline string toString(T x) {ostringstream sout;sout << x;return sout.str();}\ntemplate<typename T> inline void ntos(const T &n,string &s){stringstream stream; stream << n; stream >> s;}\ntemplate<typename T> inline void ston(const string &s,T &n){stringstream stream(s); stream >> n;}"
+  '文字列と整数同士の変換   ':
+    'prefix': 'ntos'
+    'body': "/*\n・文字列と整数同士の変換\n[使用例]\ncout << toInt(\"222\") / 2 << endl;   // 111\ncout << toString(222)+2 << endl;    // 224\nll n = 9876; string t;\nntos(n,t);  // t = \"9876\"\nstring s = \"1234\"; ll m;\nston(s,m);  // m = 1234\n*/\n\ninline ll toInt(string s){ll v;istringstream sin(s);sin >> v;return v;}\ntemplate<class T> inline string toString(T x) {ostringstream sout;sout << x;return sout.str();}\ntemplate<typename T> inline void ntos(const T &n,string &s){stringstream stream; stream << n; stream >> s;}\ntemplate<typename T> inline void ston(const string &s,T &n){stringstream stream(s); stream >> n;}"
+
+  # Other
+  'map FOR':
+    'prefix': 'for'
+    'body': "for (auto itr=$1.begin(); itr!=$1.end(); ++itr) {\n\t$2\n}"
+  'map FOR ':
+    'prefix': 'map'
+    'body': "for (auto itr=$1.begin(); itr!=$1.end(); ++itr) {\n\t$2\n}"
+
+  # Disable
+  '0':
+    'prefix': 'cerr'
+    'disabled': true
+  '1':
+    'prefix': 'cin'
+    'disabled': true
+  '2':
+    'prefix': 'cout'
+    'disabled': true
+  '3':
+    'prefix': 'cs'
+    'disabled': true
+  '4':
+    'prefix': 'cl'
+    'disabled': true
+  '5':
+    'prefix': 'def'
+    'disabled': true
+  '6':
+    'prefix': 'do'
+    'disabled': true
+  '7':
+    'prefix': 'enum'
+    'disabled': true
+  '8':
+    'prefix': 'fprintf'
+    'disabled': true
+  '9':
+    'prefix': 'func'
+    'disabled': true
+  '10':
+    'prefix': 'if'
+    'disabled': true
+  '11':
+    'prefix': 'iff'
+    'disabled': true
+  '12':
+    'prefix': 'iffe'
+    'disabled': true
+  '13':
+    'prefix': 'inf'
+    'disabled': true
+  '14':
+    'prefix': 'ife'
+    'disabled': true
+  '15':
+    'prefix': 'inc'
+    'disabled': true
+  '16':
+    'prefix': 'Inc'
+    'disabled': true
+  '17':
+    'prefix': 'main'
+    'disabled': true
+  '18':
+    'prefix': 'mark'
+    'disabled': true
+  '19':
+    'prefix': 'ns'
+    'disabled': true
+  '20':
+    'prefix': 'once'
+    'disabled': true
+  '21':
+    'prefix': 'outf'
+    'disabled': true
+  '22':
+    'prefix': 'printf'
+    'disabled': true
+  '23':
+    'prefix': 'rf'
+    'disabled': true
+  '24':
+    'prefix': 'scanf'
+    'disabled': true
+  '25':
+    'prefix': 'sp'
+    'disabled': true
+  '26':
+    'prefix': 'st'
+    'disabled': true
+  '27':
+    'prefix': 'str'
+    'disabled': true
+  '28':
+    'prefix': 'switch'
+    'disabled': true
+  '29':
+    'prefix': 'td'
+    'disabled': true
+  '30':
+    'prefix': 'tp'
+    'disabled': true
+  '31':
+    'prefix': 'vector'
+    'disabled': true
+  '32':
+    'prefix': 'void'
+    'disabled': true
+  '33':
+    'prefix': 'wf'
+    'disabled': true
+  '34':
+    'prefix': 'while'
+    'disabled': true
