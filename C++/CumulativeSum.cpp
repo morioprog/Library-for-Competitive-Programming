@@ -7,12 +7,13 @@ CumulativeSum<int> acc(n);      // 要素数nの累積和用の配列
 acc.add(k,x);     // 要素kに値xを加える
 acc.build();      // 累積和を取る
 cout << acc.query(k) << endl;   // 区間[0,k]の和
+cout << acc.query(l,r) << endl;   // 区間[l,r)の和
 */
 
 template<class T> struct CumulativeSum {
   vector<T> data;
   CumulativeSum(int sz) : data(sz, 0) {};
-  void add(int k, int x) {
+  void add(int k, T x) {
     data[k] += x;
   }
   void build() {
@@ -20,10 +21,14 @@ template<class T> struct CumulativeSum {
       data[i] += data[i - 1];
     }
   }
-  T query(int k)
-  {
-    if(k < 0) return (0);
+  T query(int k) {
+    if (k < 0) return (0);
     return (data[min(k, (int) data.size() - 1)]);
+  }
+  T query(int l, int r) {
+    T ret = (data[min(r-1, (int) data.size() - 1)]);
+    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);
+    return ret;
   }
 };
 

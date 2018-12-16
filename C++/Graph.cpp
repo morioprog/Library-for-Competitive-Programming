@@ -3,6 +3,7 @@
   > Dijkstra
   > BellmanFord
   > WarshallFloyd
+[応用] 単一終点最短路問題は, すべての有向辺を逆向きに張り替えると, 単一始点最短路問題に帰着できる.
 [使用例]
 Graph<int> g(N);    // 頂点数N, 重さの型がintのグラフを宣言
 add_edge(g,a,b,c);  // グラフgに, aからbへの重さcの無向辺を追加
@@ -24,12 +25,13 @@ template<typename T> void  add_arc(Graph< T > &g, int from, int to, T w = 1) { g
 ・ダイクストラ法
   > O(ElogV) [E:辺の数, V:頂点の数]
 [備考] 負辺の存在しないグラフに対する単一始点全点間最短路を求めるアルゴリズム
+[注意] 結果を足し合わせる際, INFの大きさに注意
 [使用例]
 auto dij = Dijkstra(g,s);     // グラフgにおける, 始点sからの最短路
 */
 
 template<typename T> vector< T > Dijkstra(Graph<T> &g, int from) {
-  const auto INF = numeric_limits< T >::max();
+  const auto INF = numeric_limits< T >::max()/10;
   vector< T > dist(g.size(), INF);
   dist[from] = 0;
   using Pi = pair< T, int >;
@@ -54,6 +56,7 @@ template<typename T> vector< T > Dijkstra(Graph<T> &g, int from) {
   > O(EV) [E:辺の数, V:頂点の数]
 [備考] グラフ(負辺が存在してもよい)に対する単一始点全点間最短路を求めるアルゴリズム
       負閉路が存在しているかの判定も可能 -> 存在していたら空列を返す
+[注意] 結果を足し合わせる際, INFの大きさに注意
 [使用例]
 Edges<int> edges;                     // 全ての辺 (重さ: int)
 add_to_edges(edges,a,b,c);            // 辺集合edgesに, 始点a, 終点b, 重さcの辺を追加
@@ -62,7 +65,7 @@ auto bf = BellmanFord(edges,V,s);     // 辺edges, 頂点数Vのグラフにお�
 
 template<typename T> void add_to_edges(Edges< T > &e, int from, int to, T w = 1) { e.emplace_back(from,to,w); }
 template<typename T> vector< T > BellmanFord(Edges< T > &edges, int vertex, int from) {
-  const auto INF = numeric_limits< T >::max();
+  const auto INF = numeric_limits< T >::max()/10;
   vector< T > dist(vertex, INF);
   dist[from] = 0;
   for (int i = 0; i < vertex - 1; ++i) {
@@ -85,6 +88,7 @@ template<typename T> vector< T > BellmanFord(Edges< T > &edges, int vertex, int 
 [備考] 全点間最短路を求めるアルゴリズム
       負閉路が存在しているかの検出も可能
         -> ある頂点vからv自身への最短路が負なが負閉路が存在
+[注意] 結果を足し合わせる際, INFの大きさに注意
 [使用例]
 auto wf = WarshallFloyd(g);      // グラフgにおける全点間最短路
 add_edge_to_matrix(wf,a,b,c);    // 隣接行列wfに, 始点a, 終点b, 重さcの辺を追加して, wfを更新
@@ -92,7 +96,7 @@ add_edge_to_matrix(wf,a,b,c);    // 隣接行列wfに, 始点a, 終点b, 重さc
 
 template<typename T> using Matrix = vector< vector< T > >;
 template<typename T> Matrix< T > WarshallFloyd(Graph< T > &g) {
-  const auto INF = numeric_limits< T >::max();
+  const auto INF = numeric_limits< T >::max()/10;
   int vertex = g.size();
   Matrix< T > dist(vertex, vector< T >(vertex, INF));
   for (int i = 0; i < vertex; ++i) dist[i][i] = 0;
@@ -113,7 +117,7 @@ template<typename T> Matrix< T > WarshallFloyd(Graph< T > &g) {
   return dist;
 }
 template<typename T> void add_edge_to_matrix(Matrix< T > &mat, int from, int to, T weight = 1) {
-  const auto INF = numeric_limits< T >::max();
+  const auto INF = numeric_limits< T >::max()/10;
   mat[from][to] = mat[to][from] = min(mat[from][to], weight);
   int vertex = mat.size();
   for (int k : {from, to}) {
