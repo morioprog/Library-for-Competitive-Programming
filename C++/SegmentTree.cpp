@@ -9,6 +9,7 @@ SegmentTree<int> seg_min(N, [](int a, int b){ return min(a,b); }, INF); // 区�
 seg_min.set(k,x);     // 要素kに値xを設定
 seg_min.build();      // 上のセグメントに値を設定
 seg_min.update(k,x);  // 要素kを値xに変更
+seg_min.add(k,x);  // 要素kを値xに変更
 seg_min.query(l,r);   // 区間[l,r)に対する二項演算の結果を返す
 */
 
@@ -27,7 +28,7 @@ template<typename T> struct SegmentTree {
     seg.resize(2 * size - 1, M1);
   }
 
-  void set(int k, int x) {
+  void set(int k, T x) {
     seg[k + size - 1] = x;
   }
 
@@ -38,7 +39,17 @@ template<typename T> struct SegmentTree {
     }
   }
 
-  void update(int k, int x) {
+  void update(int k, T x) {
+    // kをseg内の添字に対応させる <- (size - 1)を足す
+    k += size - 1;
+    seg[k] = x;
+    while (k > 0) {
+      k = (k - 1) / 2;
+      seg[k] = func(seg[2*k+1], seg[2*k+2]);
+    }
+  }
+
+  void add(int k, T x) {
     // kをseg内の添字に対応させる <- (size - 1)を足す
     k += size - 1;
     seg[k] += x;
@@ -59,7 +70,7 @@ template<typename T> struct SegmentTree {
 
   void debug() {
     for (int i = 0; i < 2 * size - 1; ++i) {
-      cout << seg[i] << " \n"[i==2*size-2];
+      cerr << seg[i] << " \n"[i==2*size-2];
     }
   }
 

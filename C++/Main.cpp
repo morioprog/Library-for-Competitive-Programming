@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+//#define int long long
 typedef long long ll;       typedef long double ld;  typedef pair<int,int> pii; typedef pair<ll,ll> pll;  typedef vector<int> vi;   typedef vector<ll> vl;
 typedef vector<string> vst; typedef vector<bool> vb; typedef vector<ld> vld;    typedef vector<pii> vpii; typedef vector<pll> vpll; typedef vector<vector<int> > vvi;
-const int INF = (0x7FFFFFFFL); const ll INFF = (0x7FFFFFFFFFFFFFFFL);
-const int MOD = 1e9 + 7;       const int MODD = 998244353;
-const double PI  = acos(-1.0); const double EPS = 1e-9;
+const int INF = (0x7FFFFFFFL); const ll INFF = (0x7FFFFFFFFFFFFFFFL); const string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const int MOD = 1e9 + 7;       const int MODD = 998244353;            const string alphabet = "abcdefghijklmnopqrstuvwxyz";
+const double PI = acos(-1.0);  const double EPS = 1e-9;               const string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 int dx[9] = { 1, 0, -1,  0,  1, -1, -1, 1, 0 };
 int dy[9] = { 0, 1,  0, -1, -1, -1,  1, 1, 0 };
 #define ln '\n'
@@ -19,8 +20,10 @@ template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(in
 template<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<"{"<<j.first<<", "<<j.second<<"}";return o;}
 template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
-inline void print(void){cout << endl;}
-template<class Head> void print(Head&& head){cout << head;print();} template<class Head,class... Tail> void print(Head&& head,Tail&&... tail){cout<<head<<" ";print(forward<Tail>(tail)...);}
+inline int print(void){cout << endl; return 0;}
+template<class Head> int print(Head&& head){cout << head;print();return 0;} template<class Head,class... Tail> int print(Head&& head,Tail&&... tail){cout<<head<<" ";print(forward<Tail>(tail)...);return 0;}
+inline int debug(void){cerr << endl; return 0;}
+template<class Head> int debug(Head&& head){cerr << head;debug();return 0;} template<class Head,class... Tail> int debug(Head&& head,Tail&&... tail){cerr<<head<<" ";debug(forward<Tail>(tail)...);return 0;}
 template<typename T> void PA(T &a){int ASIZE=sizeof(a)/sizeof(a[0]);for(int ii=0;ii<ASIZE;++ii){cout<<a[ii]<<" \n"[ii==ASIZE-1];}}
 template<typename T> void PV(T &v){int VSIZE=v.size();for(int ii=0;ii<VSIZE;++ii){cout<<v[ii]<<" \n"[ii==VSIZE-1];}}
 #define ER(x)  cerr << #x << " = " << (x) << endl;
@@ -41,13 +44,14 @@ template<typename A,typename B> void sankou(bool x,A a,B b){cout<<((x)?(a):(b))<
 #define MUL(a,b) a=(a*ll(b))%MOD
 inline ll MOP(ll x,ll n,ll m=MOD){ll r=1;while(n>0){if(n&1)(r*=x)%=m;(x*=x)%=m;n>>=1;}return r;}
 inline ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}inline ll lcm(ll a,ll b){return a*b/gcd(a,b);}inline ll POW(ll a,ll b){ll c=1ll;do{if(b&1)c*=1ll*a;a*=1ll*a;}while(b>>=1);return c;}
-template<typename T> inline bool between(T x,T a,T b) {return ((a<=x)&&(x<b));}template<class T> inline T sqr(T x){return x*x;}
+template<typename T,typename A,typename B> inline bool between(T x,A a,B b) {return ((a<=x)&&(x<b));}template<class T> inline T sqr(T x){return x*x;}
 template<typename A,typename B> inline bool chmax(A &a,const B &b){if(a<b){a=b;return 1;}return 0;}
 template<typename A,typename B> inline bool chmin(A &a,const B &b){if(a>b){a=b;return 1;}return 0;}
 #define tmax(x,y,z) max((x),max((y),(z)))
 #define tmin(x,y,z) min((x),min((y),(z)))
 #define PB push_back
 #define MP make_pair
+#define MT make_tuple
 #define all(v) (v).begin(),(v).end()
 #define rall(v) (v).rbegin(),(v).rend()
 #define SORT(v) sort((v).begin(),(v).end())
@@ -67,14 +71,14 @@ struct abracadabra{
     abracadabra(){
         cin.tie(0); ios::sync_with_stdio(0);
         cout << fixed << setprecision(20);
+        cerr << fixed << setprecision(5);
     };
 } ABRACADABRA;
-//#define int long long
 
 //---------------8<---------------8<---------------8<---------------8<---------------//
 
 signed main() {
 
-
+  
 
 }

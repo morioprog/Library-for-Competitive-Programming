@@ -20,10 +20,10 @@ template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(in
 template<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<"{"<<j.first<<", "<<j.second<<"}";return o;}
 template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
-inline void print(void){cout << endl;}
-template<class Head> void print(Head&& head){cout << head;print();} template<class Head,class... Tail> void print(Head&& head,Tail&&... tail){cout<<head<<" ";print(forward<Tail>(tail)...);}
-inline void debug(void){cerr << endl;}
-template<class Head> void debug(Head&& head){cerr << head;debug();} template<class Head,class... Tail> void debug(Head&& head,Tail&&... tail){cerr<<head<<" ";debug(forward<Tail>(tail)...);}
+inline int print(void){cout << endl; return 0;}
+template<class Head> int print(Head&& head){cout << head;print();return 0;} template<class Head,class... Tail> int print(Head&& head,Tail&&... tail){cout<<head<<" ";print(forward<Tail>(tail)...);return 0;}
+inline int debug(void){cerr << endl; return 0;}
+template<class Head> int debug(Head&& head){cerr << head;debug();return 0;} template<class Head,class... Tail> int debug(Head&& head,Tail&&... tail){cerr<<head<<" ";debug(forward<Tail>(tail)...);return 0;}
 template<typename T> void PA(T &a){int ASIZE=sizeof(a)/sizeof(a[0]);for(int ii=0;ii<ASIZE;++ii){cout<<a[ii]<<" \n"[ii==ASIZE-1];}}
 template<typename T> void PV(T &v){int VSIZE=v.size();for(int ii=0;ii<VSIZE;++ii){cout<<v[ii]<<" \n"[ii==VSIZE-1];}}
 #define ER(x)  cerr << #x << " = " << (x) << endl;
@@ -44,13 +44,14 @@ template<typename A,typename B> void sankou(bool x,A a,B b){cout<<((x)?(a):(b))<
 #define MUL(a,b) a=(a*ll(b))%MOD
 inline ll MOP(ll x,ll n,ll m=MOD){ll r=1;while(n>0){if(n&1)(r*=x)%=m;(x*=x)%=m;n>>=1;}return r;}
 inline ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}inline ll lcm(ll a,ll b){return a*b/gcd(a,b);}inline ll POW(ll a,ll b){ll c=1ll;do{if(b&1)c*=1ll*a;a*=1ll*a;}while(b>>=1);return c;}
-template<typename T> inline bool between(T x,T a,T b) {return ((a<=x)&&(x<b));}template<class T> inline T sqr(T x){return x*x;}
+template<typename T,typename A,typename B> inline bool between(T x,A a,B b) {return ((a<=x)&&(x<b));}template<class T> inline T sqr(T x){return x*x;}
 template<typename A,typename B> inline bool chmax(A &a,const B &b){if(a<b){a=b;return 1;}return 0;}
 template<typename A,typename B> inline bool chmin(A &a,const B &b){if(a>b){a=b;return 1;}return 0;}
 #define tmax(x,y,z) max((x),max((y),(z)))
 #define tmin(x,y,z) min((x),min((y),(z)))
 #define PB push_back
 #define MP make_pair
+#define MT make_tuple
 #define all(v) (v).begin(),(v).end()
 #define rall(v) (v).rbegin(),(v).rend()
 #define SORT(v) sort((v).begin(),(v).end())
@@ -70,6 +71,7 @@ struct abracadabra{
     abracadabra(){
         cin.tie(0); ios::sync_with_stdio(0);
         cout << fixed << setprecision(20);
+        cerr << fixed << setprecision(5);
     };
 } ABRACADABRA;
 

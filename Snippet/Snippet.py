@@ -3,7 +3,7 @@ while 1:
     try:
         s = input()
         s = s.replace("\\n","\\\\\\\\n")
-        s = s.replace('"','\"')
+        s = s.replace('"','\\"')
         l.append(s)
     except EOFError:
         break

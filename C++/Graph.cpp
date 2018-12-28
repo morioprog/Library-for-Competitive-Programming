@@ -3,11 +3,13 @@
   > Dijkstra
   > BellmanFord
   > WarshallFloyd
+  > Kruskal
 [応用] 単一終点最短路問題は, すべての有向辺を逆向きに張り替えると, 単一始点最短路問題に帰着できる.
 [使用例]
-Graph<int> g(N);    // 頂点数N, 重さの型がintのグラフを宣言
-add_edge(g,a,b,c);  // グラフgに, aからbへの重さcの無向辺を追加
-add_arc(g,a,b,c);   // グラフgに, aからbへの重さcの有向辺を追加
+Graph<int> g(N);              // 頂点数N, 重さの型がintのグラフを宣言
+add_edge(g,a,b,c);            // グラフgに, aからbへの重さcの無向辺を追加
+add_arc(g,a,b,c);             // グラフgに, aからbへの重さcの有向辺を追加
+add_to_edges(edges,a,b,c);    // 辺集合edgesに, 始点a, 終点b, 重さcの辺を追加
 */
 
 template<typename T> struct Edge {
@@ -18,8 +20,9 @@ template<typename T> struct Edge {
 };
 template<typename T> using Edges = vector< Edge< T > >;
 template<typename T> using Graph = vector< Edges< T > >;
-template<typename T> void add_edge(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); g[to].emplace_back(to,from,w); }
-template<typename T> void  add_arc(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); }
+template<typename T> void     add_edge(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); g[to].emplace_back(to,from,w); }
+template<typename T> void      add_arc(Graph< T > &g, int from, int to, T w = 1) { g[from].emplace_back(from,to,w); }
+template<typename T> void add_to_edges(Edges< T > &e, int from, int to, T w = 1) { e.emplace_back(from,to,w); }
 
 /*
 ・ダイクストラ法
@@ -63,7 +66,6 @@ add_to_edges(edges,a,b,c);            // 辺集合edgesに, 始点a, 終点b, �
 auto bf = BellmanFord(edges,V,s);     // 辺edges, 頂点数Vのグラフにおける, 始点sからの最短路
 */
 
-template<typename T> void add_to_edges(Edges< T > &e, int from, int to, T w = 1) { e.emplace_back(from,to,w); }
 template<typename T> vector< T > BellmanFord(Edges< T > &edges, int vertex, int from) {
   const auto INF = numeric_limits< T >::max()/10;
   vector< T > dist(vertex, INF);
@@ -129,4 +131,28 @@ template<typename T> void add_edge_to_matrix(Matrix< T > &mat, int from, int to,
       }
     }
   }
+}
+
+/*
+・Kruskal法
+  > O(ElogV) [E:辺の数, V:頂点の数]
+[備考] 最小全域木を求めるアルゴリズム.
+      UnionFindで, 閉路を作らないように辺を重みが小さい順に加えていく.
+[注意] UnionFindを上で定義しておくこと.
+[使用例]
+Edges<int> edges;                     // 全ての辺 (重さ: int)
+add_to_edges(edges,a,b,c);            // 辺集合edgesに, 始点a, 終点b, 重さcの辺を追加
+auto k = Kruskal(edges,V);            // 辺edges, 頂点数Vのグラフにおける最小全域木の重さ
+*/
+
+template<typename T> T Kruskal(Edges< T > &edges, int V) {
+  sort(begin(edges), end(edges), [](const Edge< T > &a, const Edge< T > &b) {
+    return (a.weight < b.weight);
+  });
+  UnionFind tree(V);
+  T ret = 0;
+  for (auto & e : edges) {
+    if (tree.unite(e.from, e.to)) ret += e.weight;
+  }
+  return ret;
 }
