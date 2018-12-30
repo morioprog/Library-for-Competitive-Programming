@@ -37,6 +37,15 @@
   'Input number':
     'prefix': 'int(input())'
     'body': 'int(input())'
+  'Input string':
+    'prefix': 'istrigq'
+    'body': 'input()'
+  'Input number ':
+    'prefix': 'n = int(input())'
+    'body': 'n = int(input())'
+  'Input string ':
+    'prefix': 'stringq '
+    'body': 's = input()'
   'Get out of FORs':
     'prefix': 'else/continue/break'
     'body': """
@@ -47,10 +56,181 @@
   'Import':
     'prefix': 'import'
     'body': """
-    from fractions import gcd
-    from collections import defaultdict as dd
-    from collections import Counter as C
+import sys
+from fractions import gcd
+from itertools import groupby as gb
+from itertools import permutations as perm
+from collections import Counter as C
+from collections import defaultdict as dd
+sys.setrecursionlimit(10**5)
     """
+
+  # Disable
+  '1':
+    'prefix': 'sc'
+    'disabled': true
+  '2':
+    'prefix': 'note'
+    'disabled': true
+  '3':
+    'prefix': 'question'
+    'disabled': true
+  '4':
+    'prefix': 'warning'
+    'disabled': true
+  '5':
+    'prefix': 'while'
+    'disabled': true
+  '6':
+    'prefix': 'with'
+    'disabled': true
+  '7':
+    'prefix': 'enc'
+    'disabled': true
+  '8':
+    'prefix': 'env'
+    'disabled': true
+  '9':
+    'prefix': 'env3'
+    'disabled': true
+  '10':
+    'prefix': 'review'
+    'disabled': true
+  '11':
+    'prefix': 'rpdb'
+    'disabled': true
+  '12':
+    'prefix': 'temp'
+    'disabled': true
+  '13':
+    'prefix': 'todo'
+    'disabled': true
+  '14':
+    'prefix': 'try'
+    'disabled': true
+  '15':
+    'prefix': 'trye'
+    'disabled': true
+  '16':
+    'prefix': 'tryef'
+    'disabled': true
+  '17':
+    'prefix': 'tryf'
+    'disabled': true
+  '18':
+    'prefix': 'idea'
+    'disabled': true
+  '19':
+    'prefix': 'if'
+    'disabled': true
+  '20':
+    'prefix': 'ifmain'
+    'disabled': true
+  '21':
+    'prefix': 'sc'
+    'disabled': true
+  '22':
+    'prefix': 'im'
+    'disabled': true
+  '23':
+    'prefix': 'ipdb'
+    'disabled': true
+  '24':
+    'prefix': 'optimize'
+    'disabled': true
+  '25':
+    'prefix': 'pdb'
+    'disabled': true
+  '26':
+    'prefix': 'property'
+    'disabled': true
+  '27':
+    'prefix': 'pudb'
+    'disabled': true
+  '28':
+    'prefix': 'as'
+    'disabled': true
+  '29':
+    'prefix': 'ase'
+    'disabled': true
+  '30':
+    'prefix': 'asf'
+    'disabled': true
+  '31':
+    'prefix': 'asi'
+    'disabled': true
+  '32':
+    'prefix': 'asin'
+    'disabled': true
+  '33':
+    'prefix': 'asinno'
+    'disabled': true
+  '34':
+    'prefix': 'asino'
+    'disabled': true
+  '35':
+    'prefix': 'asint'
+    'disabled': true
+  '36':
+    'prefix': 'asine'
+    'disabled': true
+  '37':
+    'prefix': 'asne'
+    'disabled': true
+  '38':
+    'prefix': 'asni'
+    'disabled': true
+  '39':
+    'prefix': 'asr'
+    'disabled': true
+  '40':
+    'prefix': 'ast'
+    'disabled': true
+  '41':
+    'prefix': 'dc'
+    'disabled': true
+  '42':
+    'prefix': 'debug'
+    'disabled': true
+  '43':
+    'prefix': 'def'
+    'disabled': true
+  '44':
+    'prefix': 'defs'
+    'disabled': true
+  '45':
+    'prefix': 'fail'
+    'disabled': true
+  '46':
+    'prefix': 'fim'
+    'disabled': true
+  '47':
+    'prefix': 'fix'
+    'disabled': true
+  '48':
+    'prefix': 'for'
+    'disabled': true
+  '49':
+    'prefix': 'hack'
+    'disabled': true
+  '50':
+    'prefix': 'lc'
+    'disabled': true
+  '51':
+    'prefix': 'lcie'
+    'disabled': true
+  '52':
+    'prefix': 'xxx'
+    'disabled': true
+  '53':
+    'prefix': 'class'
+    'disabled': true
+  '54':
+    'prefix': 'combak'
+    'disabled': true
+  '55':
+    'prefix': 'bug'
+    'disabled': true
 
 # C++ Snippets
 '.source.cpp':
@@ -67,7 +247,7 @@ signed main() {
   'Template':
     'prefix': 'template'
     'body': """
-#include <bits/stdc++.h>\nusing namespace std;\n//#define int long long\ntypedef long long ll;       typedef long double ld;  typedef pair<int,int> pii; typedef pair<ll,ll> pll;  typedef vector<int> vi;   typedef vector<ll> vl;\ntypedef vector<string> vst; typedef vector<bool> vb; typedef vector<ld> vld;    typedef vector<pii> vpii; typedef vector<pll> vpll; typedef vector<vector<int> > vvi;\nconst int INF = (0x7FFFFFFFL); const ll INFF = (0x7FFFFFFFFFFFFFFFL); const string ALPHABET = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\nconst int MOD = 1e9 + 7;       const int MODD = 998244353;            const string alphabet = \"abcdefghijklmnopqrstuvwxyz\";\nconst double PI = acos(-1.0);  const double EPS = 1e-9;               const string Alphabet = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\";\nint dx[9] = { 1, 0, -1,  0,  1, -1, -1, 1, 0 };\nint dy[9] = { 0, 1,  0, -1, -1, -1,  1, 1, 0 };\n#define ln '\\\\n'\n#define scnaf scanf\n#define sacnf scanf\n#define sancf scanf\n#define SS(type, ...)type __VA_ARGS__;MACRO_VAR_Scan(__VA_ARGS__);\ntemplate<typename T> void MACRO_VAR_Scan(T& t){cin >> t;}template<typename First, typename...Rest> void MACRO_VAR_Scan(First& first, Rest&...rest){cin >> first;MACRO_VAR_Scan(rest...);}\n#define SV(type,c,n) vector<type> c(n);for(auto& i:c)cin >> i;\n#define SVV(type,c,n,m) vector<vector<type>> c(n,vector<type>(m));for(auto& r:c)for(auto& i:r)cin >> i;\ntemplate<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<\"{\";for(int i=0;i<(int)j.size();++i)o<<(i>0?\", \":\"\")<<j[i];o<<\"}\";return o;}\ntemplate<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<\"{\"<<j.first<<\", \"<<j.second<<\"}\";return o;}\ntemplate<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<\"{\";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?\", \":\"\")<<*t;o<<\"}\";return o;}\ntemplate<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<\"{\";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?\", \":\"\")<<*t;o<<\"}\";return o;}\ninline int print(void){cout << endl; return 0;}\ntemplate<class Head> int print(Head&& head){cout << head;print();return 0;} template<class Head,class... Tail> int print(Head&& head,Tail&&... tail){cout<<head<<\" \";print(forward<Tail>(tail)...);return 0;}\ninline int debug(void){cerr << endl; return 0;}\ntemplate<class Head> int debug(Head&& head){cerr << head;debug();return 0;} template<class Head,class... Tail> int debug(Head&& head,Tail&&... tail){cerr<<head<<\" \";debug(forward<Tail>(tail)...);return 0;}\ntemplate<typename T> void PA(T &a){int ASIZE=sizeof(a)/sizeof(a[0]);for(int ii=0;ii<ASIZE;++ii){cout<<a[ii]<<\" \\\\n\"[ii==ASIZE-1];}}\ntemplate<typename T> void PV(T &v){int VSIZE=v.size();for(int ii=0;ii<VSIZE;++ii){cout<<v[ii]<<\" \\\\n\"[ii==VSIZE-1];}}\n#define ER(x)  cerr << #x << \" = \" << (x) << endl;\n#define ERV(v) {cerr << #v << \" : \";for(const auto& xxx : v){cerr << xxx << \" \";}cerr << \"\\\\n\";}\ninline void YES(bool x){cout<<((x)?\"YES\":\"NO\")<<endl;} inline void Yes(bool x){cout<<((x)?\"Yes\":\"No\")<<endl;}  inline void yes(bool x){cout<<((x)?\"yes\":\"no\")<<endl;}\ninline void yES(bool x){cout<<((x)?\"yES\":\"nO\")<<endl;} inline void Yay(bool x){cout<<((x)?\"Yay!\":\":(\")<<endl;}\ntemplate<typename A,typename B> void sankou(bool x,A a,B b){cout<<((x)?(a):(b))<<endl;}\n#define _overload3(_1,_2,_3,name,...) name\n#define _REP(i,n) REPI(i,0,n)\n#define REPI(i,a,b) for(ll i=ll(a);i<ll(b);++i)\n#define REP(...) _overload3(__VA_ARGS__,REPI,_REP,)(__VA_ARGS__)\n#define _RREP(i,n) RREPI(i,n,0)\n#define RREPI(i,a,b) for(ll i=ll(a);i>=ll(b);--i)\n#define RREP(...) _overload3(__VA_ARGS__,RREPI,_RREP,)(__VA_ARGS__)\n#define EACH(e,v) for(auto& e : v)\n#define PERM(v) sort((v).begin(),(v).end());for(bool c##p=1;c##p;c##p=next_permutation((v).begin(),(v).end()))\n#define ADD(a,b) a=(a+ll(b))%MOD\n#define MUL(a,b) a=(a*ll(b))%MOD\ninline ll MOP(ll x,ll n,ll m=MOD){ll r=1;while(n>0){if(n&1)(r*=x)%=m;(x*=x)%=m;n>>=1;}return r;}\ninline ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}inline ll lcm(ll a,ll b){return a*b/gcd(a,b);}inline ll POW(ll a,ll b){ll c=1ll;do{if(b&1)c*=1ll*a;a*=1ll*a;}while(b>>=1);return c;}\ntemplate<typename T,typename A,typename B> inline bool between(T x,A a,B b) {return ((a<=x)&&(x<b));}template<class T> inline T sqr(T x){return x*x;}\ntemplate<typename A,typename B> inline bool chmax(A &a,const B &b){if(a<b){a=b;return 1;}return 0;}\ntemplate<typename A,typename B> inline bool chmin(A &a,const B &b){if(a>b){a=b;return 1;}return 0;}\n#define tmax(x,y,z) max((x),max((y),(z)))\n#define tmin(x,y,z) min((x),min((y),(z)))\n#define PB push_back\n#define MP make_pair\n#define MT make_tuple\n#define all(v) (v).begin(),(v).end()\n#define rall(v) (v).rbegin(),(v).rend()\n#define SORT(v) sort((v).begin(),(v).end())\n#define RSORT(v) sort((v).rbegin(),(v).rend())\n#define EXIST(s,e) (find((s).begin(),(s).end(),(e))!=(s).end())\n#define EXISTST(s,c) (((s).find(c))!=string::npos)\n#define POSL(x,val) (lower_bound(x.begin(),x.end(),val)-x.begin())\n#define POSU(x,val) (upper_bound(x.begin(),x.end(),val)-x.begin())\n#define SZV(a) int((a).size())\n#define SZA(a) sizeof(a)/sizeof(a[0])\n#define ZERO(a) memset(a,0,sizeof(a))\n#define MINUS(a) memset(a,0xff,sizeof(a))\n#define MEMINF(a) memset(a,0x3f,sizeof(a))\n#define FILL(a,b) memset(a,b,sizeof(a))\n#define UNIQUE(v) sort((v).begin(),(v).end());(v).erase(unique((v).begin(),(v).end()),(v).end())\nstruct abracadabra{\n    abracadabra(){\n        cin.tie(0); ios::sync_with_stdio(0);\n        cout << fixed << setprecision(20);\n        cerr << fixed << setprecision(5);\n    };\n} ABRACADABRA;\n\n//---------------8<---------------8<---------------8<---------------8<---------------//\n\nsigned main() {\n\n  $1\n\n}
+#include <bits/stdc++.h>\nusing namespace std;\n//#define int long long\ntypedef long long ll;       typedef long double ld;  typedef pair<int,int> pii; typedef pair<ll,ll> pll;  typedef vector<int> vi;   typedef vector<ll> vl;\ntypedef vector<string> vst; typedef vector<bool> vb; typedef vector<ld> vld;    typedef vector<pii> vpii; typedef vector<pll> vpll; typedef vector<vector<int> > vvi;\nconst int INF = (0x7FFFFFFFL); const ll INFF = (0x7FFFFFFFFFFFFFFFL); const string ALPHABET = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\nconst int MOD = 1e9 + 7;       const int MODD = 998244353;            const string alphabet = \"abcdefghijklmnopqrstuvwxyz\";\nconst double PI = acos(-1.0);  const double EPS = 1e-9;               const string Alphabet = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\";\nint dx[9] = { 1, 0, -1,  0,  1, -1, -1, 1, 0 };\nint dy[9] = { 0, 1,  0, -1, -1, -1,  1, 1, 0 };\n#define ln '\\\\n'\n#define scnaf scanf\n#define sacnf scanf\n#define sancf scanf\n#define SS(type, ...)type __VA_ARGS__;MACRO_VAR_Scan(__VA_ARGS__);\ntemplate<typename T> void MACRO_VAR_Scan(T& t){cin >> t;}template<typename First, typename...Rest> void MACRO_VAR_Scan(First& first, Rest&...rest){cin >> first;MACRO_VAR_Scan(rest...);}\n#define SV(type,c,n) vector<type> c(n);for(auto& i:c)cin >> i;\n#define SVV(type,c,n,m) vector<vector<type>> c(n,vector<type>(m));for(auto& r:c)for(auto& i:r)cin >> i;\ntemplate<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<\"{\";for(int i=0;i<(int)j.size();++i)o<<(i>0?\", \":\"\")<<j[i];o<<\"}\";return o;}\ntemplate<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<\"{\"<<j.first<<\", \"<<j.second<<\"}\";return o;}\ntemplate<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<\"{\";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?\", \":\"\")<<*t;o<<\"}\";return o;}\ntemplate<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<\"{\";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?\", \":\"\")<<*t;o<<\"}\";return o;}\ninline int print(void){cout << endl; return 0;}\ntemplate<class Head> int print(Head&& head){cout << head;print();return 0;} template<class Head,class... Tail> int print(Head&& head,Tail&&... tail){cout<<head<<\" \";print(forward<Tail>(tail)...);return 0;}\ninline int debug(void){cerr << endl; return 0;}\ntemplate<class Head> int debug(Head&& head){cerr << head;debug();return 0;} template<class Head,class... Tail> int debug(Head&& head,Tail&&... tail){cerr<<head<<\" \";debug(forward<Tail>(tail)...);return 0;}\ntemplate<typename T> void PA(T &a){int ASIZE=sizeof(a)/sizeof(a[0]);for(int ii=0;ii<ASIZE;++ii){cout<<a[ii]<<\" \\\\n\"[ii==ASIZE-1];}}\ntemplate<typename T> void PV(T &v){int VSIZE=v.size();for(int ii=0;ii<VSIZE;++ii){cout<<v[ii]<<\" \\\\n\"[ii==VSIZE-1];}}\n#define ER(x)  cerr << #x << \" = \" << (x) << endl;\n#define ERV(v) {cerr << #v << \" : \";for(const auto& xxx : v){cerr << xxx << \" \";}cerr << \"\\\\n\";}\ninline int YES(bool x){cout<<((x)?\"YES\":\"NO\")<<endl;return 0;} inline int Yes(bool x){cout<<((x)?\"Yes\":\"No\")<<endl;return 0;}  inline int yes(bool x){cout<<((x)?\"yes\":\"no\")<<endl;return 0;}\ninline int yES(bool x){cout<<((x)?\"yES\":\"nO\")<<endl;return 0;} inline int Yay(bool x){cout<<((x)?\"Yay!\":\":(\")<<endl;return 0;}\ntemplate<typename A,typename B> void sankou(bool x,A a,B b){cout<<((x)?(a):(b))<<endl;}\n#define _overload3(_1,_2,_3,name,...) name\n#define _REP(i,n) REPI(i,0,n)\n#define REPI(i,a,b) for(ll i=ll(a);i<ll(b);++i)\n#define REP(...) _overload3(__VA_ARGS__,REPI,_REP,)(__VA_ARGS__)\n#define _RREP(i,n) RREPI(i,n,0)\n#define RREPI(i,a,b) for(ll i=ll(a);i>=ll(b);--i)\n#define RREP(...) _overload3(__VA_ARGS__,RREPI,_RREP,)(__VA_ARGS__)\n#define EACH(e,v) for(auto& e : v)\n#define PERM(v) sort((v).begin(),(v).end());for(bool c##p=1;c##p;c##p=next_permutation((v).begin(),(v).end()))\n#define ADD(a,b) a=(a+ll(b))%MOD\n#define MUL(a,b) a=(a*ll(b))%MOD\ninline ll MOP(ll x,ll n,ll m=MOD){ll r=1;while(n>0){if(n&1)(r*=x)%=m;(x*=x)%=m;n>>=1;}return r;}\ninline ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}inline ll lcm(ll a,ll b){return a*b/gcd(a,b);}inline ll POW(ll a,ll b){ll c=1ll;do{if(b&1)c*=1ll*a;a*=1ll*a;}while(b>>=1);return c;}\ntemplate<typename T,typename A,typename B> inline bool between(T x,A a,B b) {return ((a<=x)&&(x<b));}template<class T> inline T sqr(T x){return x*x;}\ntemplate<typename A,typename B> inline bool chmax(A &a,const B &b){if(a<b){a=b;return 1;}return 0;}\ntemplate<typename A,typename B> inline bool chmin(A &a,const B &b){if(a>b){a=b;return 1;}return 0;}\n#define tmax(x,y,z) max((x),max((y),(z)))\n#define tmin(x,y,z) min((x),min((y),(z)))\n#define PB push_back\n#define MP make_pair\n#define MT make_tuple\n#define all(v) (v).begin(),(v).end()\n#define rall(v) (v).rbegin(),(v).rend()\n#define SORT(v) sort((v).begin(),(v).end())\n#define RSORT(v) sort((v).rbegin(),(v).rend())\n#define EXIST(s,e) (find((s).begin(),(s).end(),(e))!=(s).end())\n#define EXISTST(s,c) (((s).find(c))!=string::npos)\n#define POSL(x,val) (lower_bound(x.begin(),x.end(),val)-x.begin())\n#define POSU(x,val) (upper_bound(x.begin(),x.end(),val)-x.begin())\n#define SZV(a) int((a).size())\n#define SZA(a) sizeof(a)/sizeof(a[0])\n#define ZERO(a) memset(a,0,sizeof(a))\n#define MINUS(a) memset(a,0xff,sizeof(a))\n#define MEMINF(a) memset(a,0x3f,sizeof(a))\n#define FILL(a,b) memset(a,b,sizeof(a))\n#define UNIQUE(v) sort((v).begin(),(v).end());(v).erase(unique((v).begin(),(v).end()),(v).end())\nstruct abracadabra{\n    abracadabra(){\n        cin.tie(0); ios::sync_with_stdio(0);\n        cout << fixed << setprecision(20);\n        cerr << fixed << setprecision(5);\n    };\n} ABRACADABRA;\n\n//---------------8<---------------8<---------------8<---------------8<---------------//\n\nsigned main() {\n\n  $1\n\n}
       """
 
   # Math
@@ -161,6 +341,12 @@ signed main() {
   'UnionFind木 O(α(n))':
     'prefix': 'UnionFind'
     'body': "/*\n・UnionFind木\n  > O(α(n))\n[使用例]\nUnionFind uf(n);    // 頂点数nのUF木を宣言\nuf.unite(a,b);      // 点a,b([0,n))が同じ集合に属する (すでに同じだったらfalseを返す)\nbool isSameGroup = uf.same(a,b);  // 点a,bが同じ集合に属するか確認\ncout << uf.find(a) << endl;       // 点aが属する集合を求める\ncout << uf.size(a) << endl;       // 点aが属する集合の要素の数を求める\n*/\n\nstruct UnionFind {\n  vector<int> parent;\n  int __size;\n  UnionFind(int size_) : parent(size_, -1), __size(size_) {}\n  bool unite(int x,int y) {\n    if ((x=find(x)) != (y=find(y))) {\n      if (parent[y] < parent[x]) swap(x,y);\n      parent[x] += parent[y];\n      parent[y] = x;\n      __size--;\n      return true;\n    }\n    return false;\n  }\n  bool same(int x,int y){return find(x)==find(y);}\n  int find(int x){return parent[x] < 0 ? x : parent[x] = find(parent[x]);}\n  int size(int x){return -parent[find(x)];}\n  int size(){return __size;}\n};"
+  '重み付きUnionFind木 O(α(n))':
+    'prefix': 'UnionFind_Weight'
+    'body': "/*\n・重み付きUnionFind木\n  > O(α(n))\n[使用例]\nUnionFind_Weight ufw(n);      // 頂点数nの重み付きUF木を宣言\nuf.unite(a,b,w);              // 点a,b([0,n))が同じ集合に属し, それらの間の重みがwである (すでに同じだったらfalseを返す)\nbool isSameGroup = uf.same(a,b);    // 点a,bが同じ集合に属するか確認\ncout << uf.find(a) << endl;         // 点aが属する集合を求める\ncout << uf.diff(a,b) << endl;       // 点a,bの間の重みを求める\n*/\n\ntemplate<typename T> struct UnionFind_Weight {\n  vector<int> parent;\n  vector<int> rank;\n  vector<T> diff_weight;\n  UnionFind_Weight(int n = 1, T SUM_UNITY = 0) { init(n, SUM_UNITY); }\n  void init(int n = 1, T SUM_UNITY = 0) {\n    parent.resize(n); rank.resize(n); diff_weight.resize(n);\n    for (int i = 0; i < n; ++i) parent[i] = i, rank[i] = 0, diff_weight[i] = SUM_UNITY;\n  }\n  int find(int x) {\n    if (parent[x] == x) return x;\n    diff_weight[x] += diff_weight[parent[x]];\n    return parent[x] = find(parent[x]);\n  }\n  bool unite(int x, int y, T w) {\n    w += weight(x); w -= weight(y);\n    x = find(x); y = find(y);\n    if (x == y) return false;\n    if (rank[x] < rank[y]) swap(x, y), w = -w;\n    if (rank[x] == rank[y]) ++rank[x];\n    parent[y] = x;\n    diff_weight[y] = w;\n    return true;\n  }\n  T weight(int x) { find(x); return diff_weight[x]; }\n  T diff(int x, int y) { return weight(y) - weight(x); }\n  bool same(int x, int y) { return find(x) == find(y); }\n};"
+  '重み付きUnionFind木 O(α(n)) ':
+    'prefix': 'OmomitukiUnionFind'
+    'body': "/*\n・重み付きUnionFind木\n  > O(α(n))\n[使用例]\nUnionFind_Weight ufw(n);      // 頂点数nの重み付きUF木を宣言\nuf.unite(a,b,w);              // 点a,b([0,n))が同じ集合に属し, それらの間の重みがwである (すでに同じだったらfalseを返す)\nbool isSameGroup = uf.same(a,b);    // 点a,bが同じ集合に属するか確認\ncout << uf.find(a) << endl;         // 点aが属する集合を求める\ncout << uf.diff(a,b) << endl;       // 点a,bの間の重みを求める\n*/\n\ntemplate<typename T> struct UnionFind_Weight {\n  vector<int> parent;\n  vector<int> rank;\n  vector<T> diff_weight;\n  UnionFind_Weight(int n = 1, T SUM_UNITY = 0) { init(n, SUM_UNITY); }\n  void init(int n = 1, T SUM_UNITY = 0) {\n    parent.resize(n); rank.resize(n); diff_weight.resize(n);\n    for (int i = 0; i < n; ++i) parent[i] = i, rank[i] = 0, diff_weight[i] = SUM_UNITY;\n  }\n  int find(int x) {\n    if (parent[x] == x) return x;\n    diff_weight[x] += diff_weight[parent[x]];\n    return parent[x] = find(parent[x]);\n  }\n  bool unite(int x, int y, T w) {\n    w += weight(x); w -= weight(y);\n    x = find(x); y = find(y);\n    if (x == y) return false;\n    if (rank[x] < rank[y]) swap(x, y), w = -w;\n    if (rank[x] == rank[y]) ++rank[x];\n    parent[y] = x;\n    diff_weight[y] = w;\n    return true;\n  }\n  T weight(int x) { find(x); return diff_weight[x]; }\n  T diff(int x, int y) { return weight(y) - weight(x); }\n  bool same(int x, int y) { return find(x) == find(y); }\n};"
 
   # Graph
   'グラフの宣言':
@@ -204,16 +390,16 @@ signed main() {
   # CumulativeSum
   '1次元累積和':
     'prefix': 'CumulativeSum'
-    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[応用例] 加減算をそれぞれXORにすると, 累積XOR\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n    // data[k] ^= x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n      // data[i] ^= data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    // if (l >= 0) ret ^= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
   '1次元累積和 ':
     'prefix': 'imos'
-    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[応用例] 加減算をそれぞれXORにすると, 累積XOR\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n    // data[k] ^= x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n      // data[i] ^= data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    // if (l >= 0) ret ^= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
   '1次元累積和  ':
     'prefix': 'Accumulate'
-    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[応用例] 加減算をそれぞれXORにすると, 累積XOR\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n    // data[k] ^= x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n      // data[i] ^= data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    // if (l >= 0) ret ^= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
   '1次元累積和   ':
-    'prefix': 'Ruisekiwa'
-    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
+    'prefix': 'Ruisekiwaxor'
+    'body': "/*\n・1次元累積和\n  >     build O(n)\n  > add,query O(1)\n[応用例] 加減算をそれぞれXORにすると, 累積XOR\n[使用例]\nCumulativeSum<int> acc(n);      // 要素数nの累積和用の配列\nacc.add(k,x);     // 要素kに値xを加える\nacc.build();      // 累積和を取る\ncout << acc.query(k) << endl;   // 区間[0,k]の和\ncout << acc.query(l,r) << endl;   // 区間[l,r)の和\n*/\n\ntemplate<class T> struct CumulativeSum {\n  vector<T> data;\n  CumulativeSum(int sz) : data(sz, 0) {};\n  void add(int k, T x) {\n    data[k] += x;\n    // data[k] ^= x;\n  }\n  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i - 1];\n      // data[i] ^= data[i - 1];\n    }\n  }\n  T query(int k) {\n    if (k < 0) return (0);\n    return (data[min(k, (int) data.size() - 1)]);\n  }\n  T query(int l, int r) {\n    T ret = (data[min(r-1, (int) data.size() - 1)]);\n    if (l >= 0) ret -= (data[min(l-1, (int) data.size() - 1)]);\n    // if (l >= 0) ret ^= (data[min(l-1, (int) data.size() - 1)]);\n    return ret;\n  }\n};"
 
   '2次元累積和':
     'prefix': 'CumulativeSum2D'

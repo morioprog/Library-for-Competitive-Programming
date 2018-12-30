@@ -28,8 +28,8 @@ template<typename T> void PA(T &a){int ASIZE=sizeof(a)/sizeof(a[0]);for(int ii=0
 template<typename T> void PV(T &v){int VSIZE=v.size();for(int ii=0;ii<VSIZE;++ii){cout<<v[ii]<<" \n"[ii==VSIZE-1];}}
 #define ER(x)  cerr << #x << " = " << (x) << endl;
 #define ERV(v) {cerr << #v << " : ";for(const auto& xxx : v){cerr << xxx << " ";}cerr << "\n";}
-inline void YES(bool x){cout<<((x)?"YES":"NO")<<endl;} inline void Yes(bool x){cout<<((x)?"Yes":"No")<<endl;}  inline void yes(bool x){cout<<((x)?"yes":"no")<<endl;}
-inline void yES(bool x){cout<<((x)?"yES":"nO")<<endl;} inline void Yay(bool x){cout<<((x)?"Yay!":":(")<<endl;}
+inline int YES(bool x){cout<<((x)?"YES":"NO")<<endl;return 0;} inline int Yes(bool x){cout<<((x)?"Yes":"No")<<endl;return 0;}  inline int yes(bool x){cout<<((x)?"yes":"no")<<endl;return 0;}
+inline int yES(bool x){cout<<((x)?"yES":"nO")<<endl;return 0;} inline int Yay(bool x){cout<<((x)?"Yay!":":(")<<endl;return 0;}
 template<typename A,typename B> void sankou(bool x,A a,B b){cout<<((x)?(a):(b))<<endl;}
 #define _overload3(_1,_2,_3,name,...) name
 #define _REP(i,n) REPI(i,0,n)
