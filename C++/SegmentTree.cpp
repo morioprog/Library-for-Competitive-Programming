@@ -9,7 +9,7 @@ SegmentTree<int> seg_min(N, [](int a, int b){ return min(a,b); }, INF); // 区�
 seg_min.set(k,x);     // 要素kに値xを設定
 seg_min.build();      // 上のセグメントに値を設定
 seg_min.update(k,x);  // 要素kを値xに変更
-seg_min.add(k,x);  // 要素kを値xに変更
+seg_min.add(k,x);     // 要素kに値xを加算
 seg_min.query(l,r);   // 区間[l,r)に対する二項演算の結果を返す
 */
 
