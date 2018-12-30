@@ -33,7 +33,7 @@ struct UnionFind {
 ・重み付きUnionFind木
   > O(α(n))
 [使用例]
-UnionFind_Weight ufw(n);      // 頂点数nの重み付きUF木を宣言
+UnionFind_Weight uf(n);      // 頂点数nの重み付きUF木を宣言
 uf.unite(a,b,w);              // 点a,b([0,n))が同じ集合に属し, それらの間の重みがwである (すでに同じだったらfalseを返す)
 bool isSameGroup = uf.same(a,b);    // 点a,bが同じ集合に属するか確認
 cout << uf.find(a) << endl;         // 点aが属する集合を求める
@@ -51,8 +51,9 @@ template<typename T> struct UnionFind_Weight {
   }
   int find(int x) {
     if (parent[x] == x) return x;
+    int ret = find(parent[x]);
     diff_weight[x] += diff_weight[parent[x]];
-    return parent[x] = find(parent[x]);
+    return parent[x] = ret;
   }
   bool unite(int x, int y, T w) {
     w += weight(x); w -= weight(y);
