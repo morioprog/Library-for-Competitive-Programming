@@ -2,6 +2,7 @@
 ・組み合わせ, 順列, 重複組み合わせ
   > 前計算 O(MAX_N + logMOD)
   > クエリ O(1)
+[備考] nが負の際, C(n,r) = (-1)^r * C(-n+r-1,r)
 [使用例]
 COMinit();                   // MAX_Nまでの前計算
 cout << nCr(n,r) << endl;    // nCr (0 <= (n,r) <= MAX_N)
@@ -21,7 +22,13 @@ void COMinit() {
         finv[i] = finv[i - 1] * inv[i] % MOD;
     }
 }
-ll nCr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*((finv[n-r]*finv[r])%MOD))%MOD; }
+ll nCr(ll n, ll r) {
+  if (r==0) return 1;
+  if (r<0) return 0;
+  if (n<0) return (r%2 ? -1 : 1) * nCr(-n+r-1,r);
+  if (n==0 || n<r) return 0;
+  return (fac[n]*((finv[n-r]*finv[r])%MOD))%MOD;
+}
 ll nPr(ll n, ll r) { if (r<0 || n<r) return 0; else return (fac[n]*finv[n-r])%MOD; }
 ll nHr(ll n, ll r) { if (n==0 && r==0) return 1; else return nCr(n+r-1,r); }
 
@@ -32,7 +39,9 @@ ll nHr(ll n, ll r) { if (n==0 && r==0) return 1; else return nCr(n+r-1,r); }
 */
 
 ll comb(ll n, int r) {
-  if (r<0 || n<r) return 0;
+  if (r==0) return 1;
+  if (n<0) return comb(-n+r-1,r) * (r%2 ? -1 : 1);
+  if (n==0 || r<0 || n<r) return 0;
   ll ret=1;
   REP(i,1,r+1) (ret*=n--)/=i;
   return ret;
