@@ -16,10 +16,10 @@ int dy[9] = { 0, 1,  0, -1, -1, -1,  1, 1, 0 };
 template<typename T> void MACRO_VAR_Scan(T& t){cin >> t;}template<typename First, typename...Rest> void MACRO_VAR_Scan(First& first, Rest&...rest){cin >> first;MACRO_VAR_Scan(rest...);}
 #define SV(type,c,n) vector<type> c(n);for(auto& i:c)cin >> i;
 #define SVV(type,c,n,m) vector<vector<type>> c(n,vector<type>(m));for(auto& r:c)for(auto& i:r)cin >> i;
-template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(int i=0;i<(int)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}
 template<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<"{"<<j.first<<", "<<j.second<<"}";return o;}
 template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
+template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(int i=0;i<(int)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}
 inline int print(void){cout << endl; return 0;}
 template<class Head> int print(Head&& head){cout << head;print();return 0;} template<class Head,class... Tail> int print(Head&& head,Tail&&... tail){cout<<head<<" ";print(forward<Tail>(tail)...);return 0;}
 inline int debug(void){cerr << endl; return 0;}
@@ -72,17 +72,17 @@ template<typename A,typename B> inline bool chmin(A &a,const B &b){if(a>b){a=b;r
 #define FILL(a,b) memset(a,b,sizeof(a))
 #define UNIQUE(v) sort((v).begin(),(v).end());(v).erase(unique((v).begin(),(v).end()),(v).end())
 struct abracadabra{
-    abracadabra(){
-        cin.tie(0); ios::sync_with_stdio(0);
-        cout << fixed << setprecision(20);
-        cerr << fixed << setprecision(5);
-    };
+  abracadabra(){
+    cin.tie(0); ios::sync_with_stdio(0);
+    cout << fixed << setprecision(20);
+    cerr << fixed << setprecision(5);
+  };
 } ABRACADABRA;
 
 //---------------8<---------------8<---------------8<---------------8<---------------//
 
 signed main() {
 
-  
+
 
 }

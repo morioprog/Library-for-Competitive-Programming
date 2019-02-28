@@ -156,3 +156,58 @@ template<typename T> T Kruskal(Edges< T > &edges, int V) {
   }
   return ret;
 }
+
+/*
+・トポロジカルソート
+  > O(E+V) [E:辺の数, V:頂点の数]
+[備考] グラフの位相的順序を求める.
+[使用例]
+vector<int> ts;             // トポロジカルソートの結果を格納するvector.
+TopologicalSort(g, ts);     // グラフgのトポロジカルソートの結果をtsに格納. 返り値はトポロジカルソート可能か否か.
+*/
+
+template<typename T> bool TopologicalSort(const Graph<T> &g, vector<int> &order) {
+  int V = g.size();
+  vector<int> color(V);
+  function<bool(int)> visit = [&](int v) {
+    color[v] = 1;
+    for (auto& e: g[v]) {
+      if (color[e.to] == 2) continue;
+      if (color[e.to] == 1) return false;
+      if (!visit(e.to)) return false;
+    }
+    order.push_back(v); color[v] = 2;
+    return true;
+  };
+  for (int i = 0; i < V; ++i) if (!color[i] && !visit(i)) return false;
+  reverse(order.begin(), order.end());
+  return true;
+}
+
+/*
+・二部グラフの判定
+  > O(E+V) [E:辺の数, V:頂点の数]
+[備考] 二部グラフならTrueを返す.
+[使用例] isBipartiteGraph(g);
+[その他] 二部グラフだった際に, 片方の集合の大きさが知りたい場合は, return retを削除して, intを返すようにする.
+        その場合は, 二部グラフならばその集合の大きさを, そうでない場合は-1を返す.
+*/
+
+template <typename T> bool isBipartiteGraph(const Graph<T> &g) {
+  int V = g.size();
+  vector<int> color(V, 0);
+  bool ret = true;
+  function<void(int, int)> dfs = [&](int i, int clr) {
+    if (color[i] != 0) return;
+    color[i] = clr;
+    for (auto& e: g[i]) {
+      if (color[e.to] == 0) dfs(e.to, -clr);
+      else if (color[e.to] == clr) ret = false;
+    }
+  };
+  dfs(0, 1);
+  return ret;
+  int cnt = 0;
+  for (auto& e: color) if (e == 1) ++cnt;
+  return ret ? -1 : cnt;
+}
