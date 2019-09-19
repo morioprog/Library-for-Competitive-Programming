@@ -196,7 +196,12 @@ libraries = [
     [
         "行列演算",
         ["math", "matrix"],
-        "Math/Matrix.cpp"
+        "Math/Matrix/Matrix.cpp"
+    ],
+    [
+        "F_2上の行列演算",
+        ["math", "matrix", "bit"],
+        "Math/Matrix/BitMatrix.cpp"
     ],
     [
         "ModInt",
