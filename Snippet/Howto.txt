@@ -1,1 +1,0 @@
-python3 Snippet.py < input.txt > output.txt
