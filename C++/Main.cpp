@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 //#define int long long
+//TEMPLATE START---------------8<---------------8<---------------8<---------------8<---------------//
 typedef long long ll;       typedef long double ld;  typedef pair<int,int> pii; typedef pair<ll,ll> pll;  typedef vector<int> vi;   typedef vector<ll> vl;
 typedef vector<string> vst; typedef vector<bool> vb; typedef vector<ld> vld;    typedef vector<pii> vpii; typedef vector<pll> vpll; typedef vector<vector<int> > vvi;
 const int INF = (0x7FFFFFFFL); const ll INFF = (0x7FFFFFFFFFFFFFFFL); const string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -19,6 +20,7 @@ template<typename T> void MACRO_VAR_Scan(T& t){cin >> t;}template<typename First
 template<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<"{"<<j.first<<", "<<j.second<<"}";return o;}
 template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
+template<class T>ostream &operator<<(ostream &o,const multiset<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(int i=0;i<(int)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}
 inline int print(void){cout << endl; return 0;}
 template<class Head> int print(Head&& head){cout << head;print();return 0;} template<class Head,class... Tail> int print(Head&& head,Tail&&... tail){cout<<head<<" ";print(forward<Tail>(tail)...);return 0;}
@@ -79,7 +81,7 @@ struct abracadabra{
   };
 } ABRACADABRA;
 
-//---------------8<---------------8<---------------8<---------------8<---------------//
+//TEMPLATE END---------------8<---------------8<---------------8<---------------8<---------------//
 
 signed main() {
 
