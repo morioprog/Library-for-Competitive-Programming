@@ -7,6 +7,6 @@ using ui64 = uint_fast64_t;
 
 signed main() {
 
-
+    $0
 
 }

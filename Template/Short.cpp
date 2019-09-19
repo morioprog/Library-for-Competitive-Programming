@@ -23,6 +23,6 @@ const int dy[] = {0, -1,  0, 1};
 
 signed main() {
 
-    
+    $0
 
 }
