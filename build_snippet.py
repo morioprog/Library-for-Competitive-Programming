@@ -79,6 +79,11 @@ libraries = [
         "DataStructure/SegmentTree/LazySegmentTree.cpp"
     ],
     [
+        "Segment Tree Beats",
+        ["data structure", "segment tree", "beats"],
+        "DataStructure/SegmentTree/SegmentTreeBeats.cpp"
+    ],
+    [
         "UnionFind木",
         ["data structure", "unionfind"],
         "DataStructure/UnionFind/UnionFind.cpp"
