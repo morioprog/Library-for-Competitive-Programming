@@ -1,11 +1,3 @@
-/*
-・ダイクストラ法
-    > O(ElogV) [E:辺の数, V:頂点の数]
-[備考] 負辺の存在しないグラフに対する単一始点全点間最短路を求めるアルゴリズム
-[注意] 結果を足し合わせる際, INFの大きさに注意
-[使用例] auto dij = Dijkstra(g, s);     // グラフgにおける, 始点sからの最短路
-*/
-
 template<typename T> vector< T > Dijkstra(Graph< T > &g, int from) {
     const auto INF = numeric_limits< T >::max() / 10;
     vector< T > dist(g.size(), INF);
@@ -26,3 +18,11 @@ template<typename T> vector< T > Dijkstra(Graph< T > &g, int from) {
     }
     return dist;
 }
+
+/*
+・ダイクストラ法
+    > O(ElogV) [E:辺の数, V:頂点の数]
+[備考] 負辺の存在しないグラフに対する単一始点全点間最短路を求めるアルゴリズム
+[注意] 結果を足し合わせる際, INFの大きさに注意
+[使用例] auto dij = Dijkstra(g, s);     // グラフgにおける, 始点sからの最短路
+*/

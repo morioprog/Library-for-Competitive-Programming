@@ -1,37 +1,3 @@
-/*
-・遅延評価セグメント木
-    > query, update O(logN)
-[引数]
-LazySegmentTree<Monoid, OperatorMonoid> seg(sz, f, g, h, d1, d0, v, p);
-> sz : 要素数
->  f : 要素と要素をマージする関数
->  g : 要素に作用素を作用させる関数
->  h : 作用素と作用素をマージする関数
-> d1 : 要素のモノイド
-> d0 : 作用素のモノイド
->  v : 初期化用の配列
->  p : 区間に対する操作が要素数に比例して変化する場合 ( p(a, b) = g(a, a, ..., a) [aはb個] )
-[備考]
-以下の3つの条件を満たすときに使える
-1. g(f(a, b), c) = f(g(a, c), g(b, c))
-( 1'. g(f(a, b), p(c, d)) = f(g(a, p(c, d / 2)), g(b, p(c, d / 2))) )
-2. g(g(a, b), c) = g(a, h(b, c))
-3. g(a, d0) = a
-[典型例]
-> 区間加算 -> 区間和
-LazySegmentTree<ll> seg(N, plus<ll>(), plus<ll>(), plus<ll>(), 0, 0, vector<ll>(N, 0), multiplies<ll>());
-> 区間加算 -> 区間最小
-LazySegmentTree<ll> seg(N, [](ll a, ll b){ return min(a, b); }, plus<ll>(), plus<ll>(), INFF, 0);
-> 区間更新 -> 区間和
-LazySegmentTree<ll> seg(N, plus<ll>(), [](ll a, ll b){ return b; }, [](ll a, ll b){ return b; }, 0, INFF, vector<ll>(N, 0), multiplies<ll>());
-> 区間更新 -> 区間最小
-LazySegmentTree<ll> seg(N, [](ll a,ll b){ return min(a,b); }, [](ll a, ll b){ return b; }, [](ll a, ll b){ return b; }, INFF, INFF);
-[使用例]
-seg.update(l, r, x);        // 半開区間[l, r)に作用素xを作用
-seg.query(l, r);            // 半開区間[l, r)に対する演算の結果
-seg[k];                     // k番目の要素を取得
-*/
-
 template <typename Monoid, typename OperatorMonoid = Monoid> struct LazySegmentTree {
     typedef function< Monoid(Monoid, Monoid) > F;
     typedef function< Monoid(Monoid, OperatorMonoid) > G;
@@ -90,3 +56,37 @@ template <typename Monoid, typename OperatorMonoid = Monoid> struct LazySegmentT
         return query(k, k + 1);
     }
 };
+
+/*
+・遅延評価セグメント木
+    > query, update O(logN)
+[引数]
+LazySegmentTree<Monoid, OperatorMonoid> seg(sz, f, g, h, d1, d0, v, p);
+> sz : 要素数
+>  f : 要素と要素をマージする関数
+>  g : 要素に作用素を作用させる関数
+>  h : 作用素と作用素をマージする関数
+> d1 : 要素のモノイド
+> d0 : 作用素のモノイド
+>  v : 初期化用の配列
+>  p : 区間に対する操作が要素数に比例して変化する場合 ( p(a, b) = g(a, a, ..., a) [aはb個] )
+[備考]
+以下の3つの条件を満たすときに使える
+1. g(f(a, b), c) = f(g(a, c), g(b, c))
+( 1'. g(f(a, b), p(c, d)) = f(g(a, p(c, d / 2)), g(b, p(c, d / 2))) )
+2. g(g(a, b), c) = g(a, h(b, c))
+3. g(a, d0) = a
+[典型例]
+> 区間加算 -> 区間和
+LazySegmentTree<ll> seg(N, plus<ll>(), plus<ll>(), plus<ll>(), 0, 0, vector<ll>(N, 0), multiplies<ll>());
+> 区間加算 -> 区間最小
+LazySegmentTree<ll> seg(N, [](ll a, ll b){ return min(a, b); }, plus<ll>(), plus<ll>(), INFF, 0);
+> 区間更新 -> 区間和
+LazySegmentTree<ll> seg(N, plus<ll>(), [](ll a, ll b){ return b; }, [](ll a, ll b){ return b; }, 0, INFF, vector<ll>(N, 0), multiplies<ll>());
+> 区間更新 -> 区間最小
+LazySegmentTree<ll> seg(N, [](ll a,ll b){ return min(a,b); }, [](ll a, ll b){ return b; }, [](ll a, ll b){ return b; }, INFF, INFF);
+[使用例]
+seg.update(l, r, x);        // 半開区間[l, r)に作用素xを作用
+seg.query(l, r);            // 半開区間[l, r)に対する演算の結果
+seg[k];                     // k番目の要素を取得
+*/

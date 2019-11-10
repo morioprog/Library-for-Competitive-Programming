@@ -1,17 +1,3 @@
-/*
-・二部グラフの最大マッチング
-    > O(E * V) [E:辺の数, V:頂点の数]
-[備考] 最大流のアルゴリズムを用いて求める.
-[応用] 最大マッチングは, 最小点被覆と一致(Mとおく).
-      最大安定集合(最大独立集合)は, 最小辺被覆と(V - M)で一致.
-[参考] https://qiita.com/drken/items/e805e3f514acceb87602
-      https://qiita.com/drken/items/7f98315b56c95a6181a4
-[使用例]
-Bipartite_Matching bip(N);      // 頂点数Nのグラフを用意.
-bip.add_edge(from, to);         // 頂点fromから頂点toへの有向辺を足す.
-bip.bipartite_matching();       // 最大マッチングを求める.
-*/
-
 struct Bipartite_Matching {
     vector<vector<int>> graph;
     vector<int> match, alive, used;
@@ -55,3 +41,17 @@ struct Bipartite_Matching {
         return ret;
     }
 };
+
+/*
+・二部グラフの最大マッチング
+    > O(E * V) [E:辺の数, V:頂点の数]
+[備考] 最大流のアルゴリズムを用いて求める.
+[応用] 最大マッチングは, 最小点被覆と一致(Mとおく).
+      最大安定集合(最大独立集合)は, 最小辺被覆と(V - M)で一致.
+[参考] https://qiita.com/drken/items/e805e3f514acceb87602
+      https://qiita.com/drken/items/7f98315b56c95a6181a4
+[使用例]
+Bipartite_Matching bip(N);      // 頂点数Nのグラフを用意.
+bip.add_edge(from, to);         // 頂点fromから頂点toへの有向辺を足す.
+bip.bipartite_matching();       // 最大マッチングを求める.
+*/

@@ -1,17 +1,3 @@
-/*
-・1次元累積和
-    >     build O(N)
-    > add,query O(1)
-[応用例] 加減算をそれぞれXORにすると, 累積XOR
-[使用例]
-CumulativeSum<int> acc(N);  // 要素数Nの累積和用の配列
-acc.add(k, x);              // 要素kに値xを加える
-acc.build();                // 累積和を取る
-acc.query(k);               // 閉区間[0, k]の和
-acc.query(l, r);            // 半開区間[l, r)の和
-acc[k];                     // 要素kを取得
-*/
-
 template<typename T = int_fast64_t> struct CumulativeSum {
     vector< T > data;
     CumulativeSum(int sz, T init = 0) : data(sz, init) {}
@@ -43,3 +29,17 @@ template<typename T = int_fast64_t> struct CumulativeSum {
         cerr << endl;
     }
 };
+
+/*
+・1次元累積和
+    >     build O(N)
+    > add,query O(1)
+[応用例] 加減算をそれぞれXORにすると, 累積XOR
+[使用例]
+CumulativeSum<int> acc(N);  // 要素数Nの累積和用の配列
+acc.add(k, x);              // 要素kに値xを加える
+acc.build();                // 累積和を取る
+acc.query(k);               // 閉区間[0, k]の和
+acc.query(l, r);            // 半開区間[l, r)の和
+acc[k];                     // 要素kを取得
+*/

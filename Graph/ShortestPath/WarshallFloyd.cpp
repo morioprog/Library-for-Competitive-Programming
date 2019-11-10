@@ -1,16 +1,3 @@
-/*
-・ワーシャルフロイド法
-    > O(V ^ 3) [V:頂点数] : 全点間最短路 (WarshallFloyd())
-    > O(V ^ 2)           : 辺の追加 (add_edge_to_matrix())
-[備考] 全点間最短路を求めるアルゴリズム
-      負閉路が存在しているかの検出も可能
-        -> ある頂点vからv自身への最短路が負なら負閉路が存在
-[注意] 結果を足し合わせる際, INFの大きさに注意
-[使用例]
-auto wf = WarshallFloyd(g);         // グラフgにおける全点間最短路
-add_edge_to_matrix(wf, a, b, c);    // 隣接行列wfに, 始点a, 終点b, 重さcの辺を追加して, wfを更新
-*/
-
 template<typename T> using Matrix = vector< vector< T > >;
 template<typename T> Matrix< T > WarshallFloyd(Graph< T > &g) {
     const auto INF = numeric_limits< T >::max() / 10;
@@ -47,3 +34,16 @@ template<typename T> void add_edge_to_matrix(Matrix< T > &mat, int from, int to,
         }
     }
 }
+
+/*
+・ワーシャルフロイド法
+    > O(V ^ 3) [V:頂点数] : 全点間最短路 (WarshallFloyd())
+    > O(V ^ 2)           : 辺の追加 (add_edge_to_matrix())
+[備考] 全点間最短路を求めるアルゴリズム
+      負閉路が存在しているかの検出も可能
+        -> ある頂点vからv自身への最短路が負なら負閉路が存在
+[注意] 結果を足し合わせる際, INFの大きさに注意
+[使用例]
+auto wf = WarshallFloyd(g);         // グラフgにおける全点間最短路
+add_edge_to_matrix(wf, a, b, c);    // 隣接行列wfに, 始点a, 終点b, 重さcの辺を追加して, wfを更新
+*/

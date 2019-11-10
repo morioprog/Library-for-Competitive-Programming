@@ -1,13 +1,3 @@
-/*
-・ローリングハッシュ
-[備考] 文字列をハッシュとして管理する. ハッシュ値の衝突に注意.
-[使用例]
-RH rh = init(S);            // 文字列Sでハッシュを構築
-get(rh, l, r);              // 半開区間[l, r)のハッシュ値を取得
-rotate(rh, idx, len_s);     // 文字列をidxの位置でrotateしたものを返す
-[ToDo] 回文判定
-*/
-
 template<int mod, int base=10007>
 struct RollingHash {
     vector<uint_fast64_t> hsh, pwr;
@@ -42,3 +32,13 @@ using H = pair<uint_fast64_t, uint_fast64_t>;
 RH init(const string &s) { return make_pair(RH1(s), RH2(s)); }
 H get(RH &rh, int l, int r) { return make_pair(rh.first.get(l, r), rh.second.get(l, r)); }
 H rotate(RH &rh, int n, int sz) { return make_pair(rh.first.rotate(n, sz), rh.second.rotate(n, sz)); }
+
+/*
+・ローリングハッシュ
+[備考] 文字列をハッシュとして管理する. ハッシュ値の衝突に注意.
+[使用例]
+RH rh = init(S);            // 文字列Sでハッシュを構築
+get(rh, l, r);              // 半開区間[l, r)のハッシュ値を取得
+rotate(rh, idx, len_s);     // 文字列をidxの位置でrotateしたものを返す
+[ToDo] 回文判定
+*/

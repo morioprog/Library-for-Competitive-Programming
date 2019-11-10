@@ -1,14 +1,3 @@
-/*
-・UnionFind木
-    > O(α(n))
-[使用例]
-UnionFind uf(V);    // 頂点数VのUnionFind木を宣言
-uf.unite(a, b);     // 点a, b([0, n))が同じ集合に属する (すでに同じだったらfalseを返す)
-uf.same(a, b);      // 点a, bが同じ集合に属するか確認
-uf.find(a);         // 点aが属する集合を求める
-uf.size(a);         // 点aが属する集合の要素の数を求める
-*/
-
 struct UnionFind {
     vector<int> parent;
     int __size;
@@ -28,3 +17,14 @@ struct UnionFind {
     int size(int x) { return -parent[find(x)]; }
     int size() { return __size; }
 };
+
+/*
+・UnionFind木
+    > O(α(n))
+[使用例]
+UnionFind uf(V);    // 頂点数VのUnionFind木を宣言
+uf.unite(a, b);     // 点a, b([0, n))が同じ集合に属する (すでに同じだったらfalseを返す)
+uf.same(a, b);      // 点a, bが同じ集合に属するか確認
+uf.find(a);         // 点aが属する集合を求める
+uf.size(a);         // 点aが属する集合の要素の数を求める
+*/

@@ -1,10 +1,3 @@
-/*
-・エラトステネスの篩
-    > O(NloglogN)
-[使用例] vector<bool> prime = Eratosthenes(100000);
-[備考] nが10^6以下のときに使うべき.
-*/
-
 vector<bool> Eratosthenes(const int n) {
     vector<bool> r(n + 1, true);
     for (int i = 2; i * i <= n; ++i) {
@@ -19,3 +12,10 @@ vector<bool> Eratosthenes(const int n) {
     }
     return r;
 }
+
+/*
+・エラトステネスの篩
+    > O(NloglogN)
+[使用例] vector<bool> prime = Eratosthenes(100000);
+[備考] nが10^6以下のときに使うべき.
+*/

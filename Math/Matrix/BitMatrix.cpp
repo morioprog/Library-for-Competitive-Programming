@@ -1,13 +1,3 @@
-/*
-・BitMatrix
-[備考] F_2上の行列操作
-[注意] MAX_ROW, MAX_COLを問題ごとに変えること
-[使用例]
-BitMatrix mat(N, M);            // N行M列の行列を作成
-gaussian_elimination(mat);      // matに対してガウスの消去法を適用
-linear_equation(A, b, res);     // 連立方程式 A * res = b を解く
-*/
-
 const int MAX_ROW = 510;
 const int MAX_COL = 510;
 struct BitMatrix {
@@ -75,3 +65,13 @@ int linear_equation(BitMatrix A, vector<int> b, vector<int> &res) {
     for (int i = 0; i < rank; ++i) res[i] = M[i][n];
     return rank;
 }
+
+/*
+・BitMatrix
+[備考] F_2上の行列操作
+[注意] MAX_ROW, MAX_COLを問題ごとに変えること
+[使用例]
+BitMatrix mat(N, M);            // N行M列の行列を作成
+gaussian_elimination(mat);      // matに対してガウスの消去法を適用
+linear_equation(A, b, res);     // 連立方程式 A * res = b を解く
+*/

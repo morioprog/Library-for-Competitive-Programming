@@ -1,16 +1,3 @@
-/*
-・Dinic法
-    > O(E * V ^ 2) [E:辺の数, V:頂点の数]
-[備考] 最大流を求めるアルゴリズム.
-      最大流は最小カットと一致する(最大フロー最小カット定理).
-      「燃やす埋める問題」や「全ての頂点を二色に塗り分ける問題」などは最小カットに帰着できる.
-[参考] http://yosupo.hatenablog.com/entry/2015/03/31/134336
-[使用例]
-Dinic<int> dnc(N);                // 頂点数Nのグラフを用意.
-dnc.add_edge(from, to, cap);      // 頂点fromから頂点toへ容量capの有向辺を足す.
-dnc.max_flow(s, t);               // 頂点sから頂点tまでの最大流.
-*/
-
 template<typename T> struct Dinic {
     struct edge {
         int to;
@@ -69,3 +56,16 @@ template<typename T> struct Dinic {
         return flow;
     }
 };
+
+/*
+・Dinic法
+    > O(E * V ^ 2) [E:辺の数, V:頂点の数]
+[備考] 最大流を求めるアルゴリズム.
+      最大流は最小カットと一致する(最大フロー最小カット定理).
+      「燃やす埋める問題」や「全ての頂点を二色に塗り分ける問題」などは最小カットに帰着できる.
+[参考] http://yosupo.hatenablog.com/entry/2015/03/31/134336
+[使用例]
+Dinic<int> dnc(N);                // 頂点数Nのグラフを用意.
+dnc.add_edge(from, to, cap);      // 頂点fromから頂点toへ容量capの有向辺を足す.
+dnc.max_flow(s, t);               // 頂点sから頂点tまでの最大流.
+*/

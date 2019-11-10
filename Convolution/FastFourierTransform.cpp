@@ -1,11 +1,3 @@
-/*
-・高速フーリエ変換
-    > O(NlogN)
-[備考] 畳み込み(c_i = Sum[j = 0..i] a_j * b_(i - j))を高速に行える.
-[使用例] vector<int_fast64_t> C = FastFourierTransform::Multiply(A, B);      // AとBの畳み込みの結果をCに代入
-[参考] https://www.creativ.xyz/fast-fourier-transform/
-*/
-
 namespace FastFourierTransform {
     using C = complex< double >;
     void DiscreteFourierTransform(vector< C > &F, bool rev) {
@@ -46,3 +38,11 @@ namespace FastFourierTransform {
         return X;
     }
 };
+
+/*
+・高速フーリエ変換
+    > O(NlogN)
+[備考] 畳み込み(c_i = Sum[j = 0..i] a_j * b_(i - j))を高速に行える.
+[使用例] vector<int_fast64_t> C = FastFourierTransform::Multiply(A, B);      // AとBの畳み込みの結果をCに代入
+[参考] https://www.creativ.xyz/fast-fourier-transform/
+*/

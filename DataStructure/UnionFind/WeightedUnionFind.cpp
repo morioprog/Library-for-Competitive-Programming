@@ -1,14 +1,3 @@
-/*
-・重み付きUnionFind木
-    > O(α(n))
-[使用例]
-WeightedUnionFind uf(V);    // 頂点数Vの重み付きUnionFind木を宣言
-uf.unite(a, b, w);          // 点a, b([0, n))が同じ集合に属し, それらの間の重みがwである (すでに同じだったらfalseを返す)
-uf.same(a, b);              // 点a, bが同じ集合に属するか確認
-uf.find(a);                 // 点aが属する集合を求める
-uf.diff(a, b);              // 点a, bの間の重みを求める
-*/
-
 template<typename T> struct WeightedUnionFind {
     vector<int> parent, rank;
     vector< T > diff_weight;
@@ -37,3 +26,14 @@ template<typename T> struct WeightedUnionFind {
     T diff(int x, int y) { return weight(y) - weight(x); }
     bool same(int x, int y) { return find(x) == find(y); }
 };
+
+/*
+・重み付きUnionFind木
+    > O(α(n))
+[使用例]
+WeightedUnionFind uf(V);    // 頂点数Vの重み付きUnionFind木を宣言
+uf.unite(a, b, w);          // 点a, b([0, n))が同じ集合に属し, それらの間の重みがwである (すでに同じだったらfalseを返す)
+uf.same(a, b);              // 点a, bが同じ集合に属するか確認
+uf.find(a);                 // 点aが属する集合を求める
+uf.diff(a, b);              // 点a, bの間の重みを求める
+*/

@@ -1,15 +1,3 @@
-/*
-・SegmentMap
-[備考] 区間をmapで管理するやつ
-[注意] 以下で扱う区間は全て閉区間
-[使用例]
-SegmentMap mp(flag);    // flagがtrueなら, [l, c]と[c + 1, r]をマージする
-mp.get(p);              // pを含む区間を返す(存在しないならmp.end())
-mp.insert(l, r);        // 閉区間[l, r]を追加する
-mp.remove(l, r);        // 閉区間[l, r]を取り除く
-mp.same(p, q);          // 2点p, qが同じ区間にあればtrue
-*/
-
 class SegmentMap : public map<int_fast64_t, int_fast64_t> {
 	bool flagToMergeAdjacentSegment;
 	SegmentMap(bool flagToMergeAdjacentSegment) : flagToMergeAdjacentSegment(flagToMergeAdjacentSegment) {}
@@ -46,3 +34,15 @@ class SegmentMap : public map<int_fast64_t, int_fast64_t> {
 		return it != end() and it->first <= q and q <= it->second;
 	}
 };
+
+/*
+・SegmentMap
+[備考] 区間をmapで管理するやつ
+[注意] 以下で扱う区間は全て閉区間
+[使用例]
+SegmentMap mp(flag);    // flagがtrueなら, [l, c]と[c + 1, r]をマージする
+mp.get(p);              // pを含む区間を返す(存在しないならmp.end())
+mp.insert(l, r);        // 閉区間[l, r]を追加する
+mp.remove(l, r);        // 閉区間[l, r]を取り除く
+mp.same(p, q);          // 2点p, qが同じ区間にあればtrue
+*/

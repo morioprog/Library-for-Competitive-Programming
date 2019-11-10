@@ -1,15 +1,3 @@
-/*
-・WaveletMatrix
-[備考] 
-[使用例]
-WaveletMatrix<int, 32> wm(V);   // 最大の要素が2^32未満であるV(vector<int>)から構築
-wm.rank(v, k);                  // 半開区間[0, k)にvが何個あるかを返す
-wm.select(v, k);                // k個目のvのindexを返す
-wm.quantile(l, r, k);           // 半開区間[l, r)において, k番目に大きい数を返す
-wm.rangefreq(l, r, mn, mx);     // 半開区間[l, r)において, 半開区間[mn, mx)に含まれる数の個数を返す
-[ToDo] topk, intersect (http://miti-7.hatenablog.com/entry/2018/04/28/152259)
-*/
-
 struct FullyIndexableDictionary {
     int len, blk;
     vector<unsigned> bit;
@@ -163,3 +151,15 @@ template<typename T, int MAXLOG> struct WaveletMatrix {
         return k ? rquantile(l, r, k - 1) : npos;
     }
 };
+
+/*
+・WaveletMatrix
+[備考] 
+[使用例]
+WaveletMatrix<int, 32> wm(V);   // 最大の要素が2^32未満であるV(vector<int>)から構築
+wm.rank(v, k);                  // 半開区間[0, k)にvが何個あるかを返す
+wm.select(v, k);                // k個目のvのindexを返す
+wm.quantile(l, r, k);           // 半開区間[l, r)において, k番目に大きい数を返す
+wm.rangefreq(l, r, mn, mx);     // 半開区間[l, r)において, 半開区間[mn, mx)に含まれる数の個数を返す
+[ToDo] topk, intersect (http://miti-7.hatenablog.com/entry/2018/04/28/152259)
+*/

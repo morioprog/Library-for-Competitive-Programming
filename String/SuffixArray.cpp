@@ -1,12 +1,3 @@
-/*
-・SuffixArray
-    > 構築 : O(NlogN)   [N : 文字列長]
-    > クエリ : O(MlogN) [M : パターン長]
-[使用例]
-SuffixArray sa(S);          // 文字列Sに対するSuffixArrayを構築
-sa.lower_upper_bound(T);    // 文字列Tを含む接尾辞のindexの下限と上限を返す
-*/
-
 struct SuffixArray {
     vector<int> SA;
     string s;
@@ -72,3 +63,12 @@ struct SuffixArray {
         }
     }
 };
+
+/*
+・SuffixArray
+    > 構築 : O(NlogN)   [N : 文字列長]
+    > クエリ : O(MlogN) [M : パターン長]
+[使用例]
+SuffixArray sa(S);          // 文字列Sに対するSuffixArrayを構築
+sa.lower_upper_bound(T);    // 文字列Tを含む接尾辞のindexの下限と上限を返す
+*/

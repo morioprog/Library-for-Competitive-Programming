@@ -1,11 +1,3 @@
-/*
-・ModInt
-[備考] Mod演算のための構造体
-[使用例]
-modint M;           // 剰余系MOD(1e9+7)における演算ができる
-ModInt<mod> N;      // 剰余系modにおける演算ができる
-*/
-
 template< int MODULO > struct ModInt {
     using int64 = int_fast64_t;
     using uint32 = uint_fast32_t;
@@ -106,3 +98,11 @@ vector<ModInt< MODULO >> ModInt< MODULO >::finv = vector<ModInt< MODULO >>();
 template< int MODULO >
 vector<ModInt< MODULO >> ModInt< MODULO >::invs = vector<ModInt< MODULO >>();
 using modint = ModInt< MOD >;
+
+/*
+・ModInt
+[備考] Mod演算のための構造体
+[使用例]
+modint M;           // 剰余系MOD(1e9+7)における演算ができる
+ModInt<mod> N;      // 剰余系modにおける演算ができる
+*/

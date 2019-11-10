@@ -1,10 +1,3 @@
-/*
-・約数列挙
-    > O(√n)
-[使用例] vector<int_fast64_t> div = divisor(105);
-[備考] 整列されていない.
-*/
-
 vector<int_fast64_t> divisor(const int_fast64_t n) {
     vector<int_fast64_t> ret;
     for (int_fast64_t i = 1; i * i <= n; ++i) {
@@ -16,3 +9,10 @@ vector<int_fast64_t> divisor(const int_fast64_t n) {
     // sort(ret.begin(), ret.end());
     return ret;
 }
+
+/*
+・約数列挙
+    > O(√n)
+[使用例] vector<int_fast64_t> div = divisor(105);
+[備考] 整列されていない.
+*/

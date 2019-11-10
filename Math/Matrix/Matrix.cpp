@@ -1,12 +1,3 @@
-/*
-・行列演算
-[使用例]
-Matrix<int> mat(n,m);   // n行m列の行列を定義
-mat[i][j];              // i行j列目の要素を取得
-mat.determinant();      // matの行列式を計算
-mat ^= k;               // matのk乗を計算
-*/
-
 template< class T > struct Matrix {
     vector< vector< T > > A;
     Matrix() {}
@@ -92,3 +83,12 @@ template< class T > struct Matrix {
         return ret;
     }
 };
+
+/*
+・行列演算
+[使用例]
+Matrix<int> mat(n,m);   // n行m列の行列を定義
+mat[i][j];              // i行j列目の要素を取得
+mat.determinant();      // matの行列式を計算
+mat ^= k;               // matのk乗を計算
+*/

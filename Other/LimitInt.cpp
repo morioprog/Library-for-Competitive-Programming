@@ -1,8 +1,3 @@
-/*
-・LimitInt
-[備考] 加減乗除の演算に対して, 値の上限と下限を設定する
-*/
-
 template<typename T> struct LimitInt {
     T x;
     const T low, high;
@@ -25,3 +20,8 @@ template<typename T> struct LimitInt {
     LimitInt operator<=(const LimitInt &y) const { return (x <= y.x); }
     LimitInt operator>=(const LimitInt &y) const { return (x >= y.x); }
 };
+
+/*
+・LimitInt
+[備考] 加減乗除の演算に対して, 値の上限と下限を設定する
+*/

@@ -1,18 +1,3 @@
-/*
-・セグメント木
-    >         build O(N)
-    > query, update O(logN)
-[備考] 結合律, 単位元を持つ二項演算を, 任意の区間に関してlogNで行うデータ構造
-[使用例]
-SegmentTree<int> seg(N, [](int a, int b){ return a + b; }, 0 );     // 区間和
-SegmentTree<int> seg(N, [](int a, int b){ return min(a,b); }, INF); // 区間min
-seg.set(k, x);      // 要素kに値xを設定
-seg.build();        // 上のセグメントに値を設定
-seg.update(k, x);   // 要素kを値xに変更
-seg.add(k, x);      // 要素kに値xを加算
-seg.query(l, r);    // 半開区間[l, r)に対する二項演算の結果を返す
-*/
-
 template<typename T> struct SegmentTree {
     using F = function< T(T, T) >;
     vector< T > seg;
@@ -64,3 +49,18 @@ template<typename T> struct SegmentTree {
         }
     }
 };
+
+/*
+・セグメント木
+    >         build O(N)
+    > query, update O(logN)
+[備考] 結合律, 単位元を持つ二項演算を, 任意の区間に関してlogNで行うデータ構造
+[使用例]
+SegmentTree<int> seg(N, [](int a, int b){ return a + b; }, 0 );     // 区間和
+SegmentTree<int> seg(N, [](int a, int b){ return min(a,b); }, INF); // 区間min
+seg.set(k, x);      // 要素kに値xを設定
+seg.build();        // 上のセグメントに値を設定
+seg.update(k, x);   // 要素kを値xに変更
+seg.add(k, x);      // 要素kに値xを加算
+seg.query(l, r);    // 半開区間[l, r)に対する二項演算の結果を返す
+*/

@@ -1,13 +1,3 @@
-/*
-・SparseTable
-    > 前処理 O(NlogN)
-    > query O(1)
-[備考] 静的な配列における, 任意区間の最小値を定数時間で求められるデータ構造.
-[使用例]
-SparseTable<int> st(V);     // V(vector<int>)で初期化し, 前処理を行う
-st.query(l, r);             // 半開区間[l, r)における最小値
-*/
-
 template<typename T> struct SparseTable {
     vector< vector< T > > st;
     SparseTable() {}
@@ -27,3 +17,13 @@ template<typename T> struct SparseTable {
         return (min(st[b][l], st[b][r - (1LL << b)]));
     }
 };
+
+/*
+・SparseTable
+    > 前処理 O(NlogN)
+    > query O(1)
+[備考] 静的な配列における, 任意区間の最小値を定数時間で求められるデータ構造.
+[使用例]
+SparseTable<int> st(V);     // V(vector<int>)で初期化し, 前処理を行う
+st.query(l, r);             // 半開区間[l, r)における最小値
+*/

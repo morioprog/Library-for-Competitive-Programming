@@ -1,16 +1,3 @@
-/*
-・組み合わせ, 順列, 重複組み合わせ
-    > 前計算 O(MAX_N + logMOD)
-    > クエリ O(1)
-[備考] nが負の際, C(n, r) = (-1) ^ r * C(-n + r - 1, r)として計算.
-[使用例]
-COMinit();  // MAX_Nまでの前計算
-C(n, r);    // nCr (0 <= (n,r) <= MAX_N)
-P(n, r);    // nPr ( ... )
-H(n, r);    // nHr ( ... )
-[verify] https://yukicoder.me/submissions/380715
-*/
-
 constexpr bool EXPAND_TO_MINUS = true;
 constexpr int MOD = (int)1e9 + 7;
 constexpr int MAX_N = 2020202;
@@ -36,3 +23,16 @@ uint_fast64_t H(int n, int r) {
     if (n == 0 and r == 0) return 1;
     return C(n + r - 1, r);
 }
+
+/*
+・組み合わせ, 順列, 重複組み合わせ
+    > 前計算 O(MAX_N + logMOD)
+    > クエリ O(1)
+[備考] nが負の際, C(n, r) = (-1) ^ r * C(-n + r - 1, r)として計算.
+[使用例]
+COMinit();  // MAX_Nまでの前計算
+C(n, r);    // nCr (0 <= (n,r) <= MAX_N)
+P(n, r);    // nPr ( ... )
+H(n, r);    // nHr ( ... )
+[verify] https://yukicoder.me/submissions/380715
+*/

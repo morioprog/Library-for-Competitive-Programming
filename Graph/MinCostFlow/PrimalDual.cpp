@@ -1,15 +1,3 @@
-/*
-・最小費用流
-    > O(FElogV) [E:辺の数, V:頂点の数]
-[備考] 最小費用流を求めるアルゴリズム.
-[参考] 辺の数が多い場合は, O(UCV^2) [U:容量合計, C:費用合計] のアルゴリズムもある.
-        (http://www.prefield.com/algorithm/graph/primal_dual.html)
-[使用例]
-Primal_Dual pd(N);                  // 頂点数Nのグラフを用意.
-pd.add_edge(from, to, cap, cost);   // 頂点fromから頂点toへ, 容量cap, 単位コストcostの有向辺を用意.
-pd.min_cost_flow(from, to, flow);   // 頂点fromから頂点toへ, 流量flowを流す際のコスト.
-*/
-
 struct PrimalDual {
     const int INF = 1 << 30;
     typedef pair<int, int> P;
@@ -63,3 +51,15 @@ struct PrimalDual {
         return ret;
     }
 };
+
+/*
+・最小費用流
+    > O(FElogV) [E:辺の数, V:頂点の数]
+[備考] 最小費用流を求めるアルゴリズム.
+[参考] 辺の数が多い場合は, O(UCV^2) [U:容量合計, C:費用合計] のアルゴリズムもある.
+        (http://www.prefield.com/algorithm/graph/primal_dual.html)
+[使用例]
+Primal_Dual pd(N);                  // 頂点数Nのグラフを用意.
+pd.add_edge(from, to, cap, cost);   // 頂点fromから頂点toへ, 容量cap, 単位コストcostの有向辺を用意.
+pd.min_cost_flow(from, to, flow);   // 頂点fromから頂点toへ, 流量flowを流す際のコスト.
+*/

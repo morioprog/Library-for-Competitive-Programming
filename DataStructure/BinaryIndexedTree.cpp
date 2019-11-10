@@ -1,14 +1,3 @@
-/*
-・Binary Indexed Tree (Fenwick Tree)
-    > O(logN)
-[備考] ある要素に値を加える操作と, 区間和を求める操作に関してlogNで行うデータ構造
-[使用例]
-BinaryIndexedTree<int> bit(N);      // 要素数NのBIT
-bit.add(k, x);                      // 要素kに値xを加算
-bit.sum(k);                         // 閉区間[0, k]の和を求める
-bit.sum(l, r);                      // 半開区間[l, r)の和を求める
-*/
-
 template<typename T> struct BinaryIndexedTree {
     vector< T > data;
     BinaryIndexedTree(int sz) { data.assign(++sz, 0); }
@@ -26,3 +15,14 @@ template<typename T> struct BinaryIndexedTree {
         for (++k; k < data.size(); k += k & -k) data[k] += x;
     }
 };
+
+/*
+・Binary Indexed Tree (Fenwick Tree)
+    > O(logN)
+[備考] ある要素に値を加える操作と, 区間和を求める操作に関してlogNで行うデータ構造
+[使用例]
+BinaryIndexedTree<int> bit(N);      // 要素数NのBIT
+bit.add(k, x);                      // 要素kに値xを加算
+bit.sum(k);                         // 閉区間[0, k]の和を求める
+bit.sum(l, r);                      // 半開区間[l, r)の和を求める
+*/

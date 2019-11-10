@@ -1,18 +1,3 @@
-/*
-・Segment Tree Beats
-[備考] 任意の区間に対するchminクエリなどを, O(logN)で処理できるデータ構造
-[使用例]
-SegmentTreeBeats seg(N);
-seg.update_min(l, r, x);    // [l, r)をxにchmin
-seg.update_max(l, r, x);    // [l, r)をxにchmax
-seg.add_val(l, r, x);       // [l, r)にxを加算
-seg.update_val(l, r, x);    // [l, r)をxに変更
-seg.query_max(l, r);        // [l, r)の最大値
-seg.query_min(l, r);        // [l, r)の最小値
-seg.query_sum(l, r);        // [l, r)の総和
-[参考] https://gist.github.com/tjkendev/20e7f96b9262f7a5d739bdc978c075bd
-*/
-
 struct SegmentTreeBeats {
     static const int_fast64_t INF = 1LL << 60;
     struct Node {
@@ -236,3 +221,18 @@ struct SegmentTreeBeats {
     int_fast64_t query_min(int a, int b) { return _query_min(a, b, root, 0, n0); }
     int_fast64_t query_sum(int a, int b) { return _query_sum(a, b, root, 0, n0); }
 };
+
+/*
+・Segment Tree Beats
+[備考] 任意の区間に対するchminクエリなどを, O(logN)で処理できるデータ構造
+[使用例]
+SegmentTreeBeats seg(N);
+seg.update_min(l, r, x);    // [l, r)をxにchmin
+seg.update_max(l, r, x);    // [l, r)をxにchmax
+seg.add_val(l, r, x);       // [l, r)にxを加算
+seg.update_val(l, r, x);    // [l, r)をxに変更
+seg.query_max(l, r);        // [l, r)の最大値
+seg.query_min(l, r);        // [l, r)の最小値
+seg.query_sum(l, r);        // [l, r)の総和
+[参考] https://gist.github.com/tjkendev/20e7f96b9262f7a5d739bdc978c075bd
+*/

@@ -1,13 +1,3 @@
-/*
-・転倒数 (Inversion Number)
-    > O(NlogN)
-[備考] i < j かつ a_i > a_j となる組(i, j)の個数. バブルソートのスワップ回数と等しい.
-[注意] BinaryIndexedTreeを上で定義しておくこと.
-[使用例]
-vector<int> v = {3, 1, 5, 4, 2};
-InversionNumber(v);     // == 5 : vの転倒数
-*/
-
 template<typename T> int_fast64_t InversionNumber(vector< T > &v) {
     int_fast64_t sz = v.size(), ret = 0;
     vector< T > rev, v_cp = v; sort(v_cp.begin(), v_cp.end());
@@ -19,3 +9,13 @@ template<typename T> int_fast64_t InversionNumber(vector< T > &v) {
     }
     return ret;
 }
+
+/*
+・転倒数 (Inversion Number)
+    > O(NlogN)
+[備考] i < j かつ a_i > a_j となる組(i, j)の個数. バブルソートのスワップ回数と等しい.
+[注意] BinaryIndexedTreeを上で定義しておくこと.
+[使用例]
+vector<int> v = {3, 1, 5, 4, 2};
+InversionNumber(v);     // == 5 : vの転倒数
+*/

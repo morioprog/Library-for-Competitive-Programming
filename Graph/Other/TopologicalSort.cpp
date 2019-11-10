@@ -1,12 +1,3 @@
-/*
-・トポロジカルソート
-    > O(E + V) [E:辺の数, V:頂点の数]
-[備考] グラフの位相的順序を求める.
-[使用例]
-vector<int> ts;             // トポロジカルソートの結果を格納するvector.
-TopologicalSort(g, ts);     // グラフgのトポロジカルソートの結果をtsに格納. 返り値はトポロジカルソート可能か否か.
-*/
-
 template<typename T> bool TopologicalSort(const Graph< T > &g, vector<int> &order) {
     int V = g.size();
     vector<int> color(V);
@@ -24,3 +15,12 @@ template<typename T> bool TopologicalSort(const Graph< T > &g, vector<int> &orde
     reverse(order.begin(), order.end());
     return true;
 }
+
+/*
+・トポロジカルソート
+    > O(E + V) [E:辺の数, V:頂点の数]
+[備考] グラフの位相的順序を求める.
+[使用例]
+vector<int> ts;             // トポロジカルソートの結果を格納するvector.
+TopologicalSort(g, ts);     // グラフgのトポロジカルソートの結果をtsに格納. 返り値はトポロジカルソート可能か否か.
+*/
