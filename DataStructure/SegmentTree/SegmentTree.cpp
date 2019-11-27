@@ -43,9 +43,10 @@ template<typename T> struct SegmentTree {
         T f_r = query(a, b, 2 * k + 2, (l + r) / 2, r);
         return func(f_l, f_r);
     }
-    void debug() {
+    void print() {
         for (int i = 0; i < 2 * size - 1; ++i) {
-            cerr << seg[i] << " \n"[i == 2 * size - 2];
+            cerr << seg[i] << " ";
+            if (!((i + 2) & (i + 1))) cerr << endl;
         }
     }
 };

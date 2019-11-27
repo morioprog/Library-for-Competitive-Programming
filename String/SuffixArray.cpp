@@ -57,7 +57,7 @@ struct SuffixArray {
         t.back()--;
         return make_pair(idx, high);
     }
-    void debug() {
+    void print() {
         for (int i = 0; i < size(); ++i) {
             cerr << i << " : " << s.substr(SA[i]) << endl;
         }
