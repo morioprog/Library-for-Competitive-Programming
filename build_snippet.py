@@ -86,6 +86,11 @@ libraries = [
         "DataStructure/SegmentTree/SegmentTreeBeats.cpp"
     ],
     [
+        "Queue Aggregation",
+        ["data structure", "queue aggregation", "sliding window aggregation"],
+        "DataStructure/SlidingWindowAggregation/QueueAggregation.cpp"
+    ],
+    [
         "UnionFind木",
         ["data structure", "unionfind"],
         "DataStructure/UnionFind/UnionFind.cpp"
