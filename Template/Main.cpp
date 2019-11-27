@@ -83,17 +83,17 @@ template<typename A,typename B> inline bool chmin(A &a,const B &b){if(a>b){a=b;r
 #define FILL(a,b) memset(a,b,sizeof(a))
 #define UNIQUE(v) sort((v).begin(),(v).end());(v).erase(unique((v).begin(),(v).end()),(v).end())
 struct abracadabra{
-	abracadabra(){
-		cin.tie(0); ios::sync_with_stdio(0);
-		cout << fixed << setprecision(20);
-		cerr << fixed << setprecision(5);
-	};
+    abracadabra(){
+        cin.tie(0); ios::sync_with_stdio(0);
+        cout << fixed << setprecision(20);
+        cerr << fixed << setprecision(5);
+    };
 } ABRACADABRA;
 
 //TEMPLATE END---------------8<---------------8<---------------8<---------------8<---------------//
 
 signed main() {
 
-	$0
+    $0
 
 }
