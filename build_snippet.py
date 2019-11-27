@@ -23,6 +23,8 @@ def get_body(path):
             s = s_line.rstrip()
             s = s.replace("\\n","\\\\\\\\n")
             s = s.replace('"','\\"')
+            s = s.replace('\\ ','\\\\ ')
+            s = s.replace('\\_', '\\\\_')
             body.append(s)
     return body
 
