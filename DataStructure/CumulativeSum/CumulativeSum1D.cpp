@@ -16,6 +16,7 @@ template<typename T = int_fast64_t> struct CumulativeSum {
         return data[min(k, (int)data.size() - 1)];
     }
     T query(int l, int r) {
+        if (l >= r) return 0;
         T ret = (data[min(r - 1, (int)data.size() - 1)]);
         if (l > 0) ret -= (data[min(l - 1, (int)data.size() - 1)]);
         // if (l > 0) ret ^= (data[min(l - 1, (int)data.size() - 1)]);
@@ -24,7 +25,7 @@ template<typename T = int_fast64_t> struct CumulativeSum {
     T operator[](const int &k) {
         return data[k];
     }
-    void debug() {
+    void print() {
         for (int i = 0; i < (int)data.size(); ++i) cerr << data[i] << ' ';
         cerr << endl;
     }
