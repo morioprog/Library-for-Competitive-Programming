@@ -169,6 +169,11 @@ libraries = [
         "Graph/ShortestPath/WarshallFloyd.cpp"
     ],
     [
+        "HeavyLightDecomposition / LCA",
+        ["graph", "heavylightdecomposition", "lowestcommonancestor"],
+        "Graph/HeavyLightDecomposition/HeavyLightDecomposition.cpp"
+    ],
+    [
         "組み合わせ (逆元)",
         ["math", "combination", "inverse"],
         "Math/Combination/Inverse.cpp"
