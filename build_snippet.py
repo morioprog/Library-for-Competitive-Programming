@@ -101,6 +101,11 @@ libraries = [
         "DataStructure/BinaryIndexedTree.cpp"
     ],
     [
+        "Median Prique",
+        ["data structure", "median prique"],
+        "DataStructure/MedianPrique.cpp"
+    ],
+    [
         "Segment Map",
         ["data structure", "segment map", "map"],
         "DataStructure/SegmentMap.cpp"
