@@ -41,11 +41,6 @@ libraries = [
         "Template/Short.cpp"
     ],
     [
-        "Template(shortshort)",
-        ["template"],
-        "Template/ShortShort.cpp"
-    ],
-    [
         "めぐる式二分探索",
         ["meguru"],
         "Algorithm/Meguru.cpp"
