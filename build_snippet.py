@@ -221,6 +221,11 @@ libraries = [
         "Math/Modint.cpp"
     ],
     [
+        "Fraction",
+        ["math", "fraction"],
+        "Math/Fraction.cpp"
+    ],
+    [
         "ローリングハッシュ",
         ["string", "rolling hash"],
         "String/RollingHash.cpp"
