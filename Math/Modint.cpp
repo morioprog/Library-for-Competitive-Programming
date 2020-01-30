@@ -3,8 +3,8 @@ template< int MODULO > struct ModInt {
     using uint32 = uint_fast32_t;
     using uint64 = uint_fast64_t;
     uint64 x; ModInt() : x(0) {}
-    ModInt(uint64 y) : x(set(y % MODULO + MODULO)) {}
-    static uint64 set(const uint64 &y) { return (y < MODULO) ? y : y - MODULO; }
+    ModInt(int64 y) : x(set(y % MODULO + MODULO)) {}
+    static uint64 set(const int64 &y) { return (y < MODULO) ? y : y - MODULO; }
     static ModInt make(const uint64 &y) { ModInt ret = y; return ret; }
     ModInt operator+(const ModInt &m) const { return make(set(x + m.x)); }
     ModInt operator-(const ModInt &m) const { return make(set(x + MODULO - m.x)); }
@@ -17,8 +17,8 @@ template< int MODULO > struct ModInt {
     ModInt &operator^=(const uint64 &y) { return *this = *this ^ y; }
     ModInt operator~ () const { return *this ^ (MODULO - 2); }
     ModInt operator- () const { return make(set(MODULO - x)); }
-    ModInt operator! () const { init(uint32(*this)); return fact[uint32(*this)]; }
-    ModInt operator& () const { init(uint32(*this)); return finv[uint32(*this)]; }
+    ModInt operator! () const { return getFact(uint32(*this)); }
+    ModInt operator& () const { return getFinv(uint32(*this)); }
     ModInt operator++() { return *this = make(set(x + 1)); }
     ModInt operator--() { return *this = make(set(x + MODULO - 1)); }
     bool operator==(const ModInt &m) const { return x == m.x; }
@@ -49,6 +49,9 @@ template< int MODULO > struct ModInt {
         for (uint32 i = n; i >= m; --i) finv[i - 1] = finv[i] * make(i);
         for (uint32 i = m; i <= n; ++i) invs[i] = finv[i] * fact[i - 1];
     }
+    static ModInt getFact(uint32 n) { init(n); return fact[n]; }
+    static ModInt getFinv(uint32 n) { init(n); return finv[n]; }
+    static ModInt getInvs(uint32 n) { init(n); return invs[n]; }
     static ModInt C(int64 n, int64 r) {
         if (r == 0) return make(1);
         if (r <  0) return make(0);
