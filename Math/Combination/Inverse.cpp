@@ -1,7 +1,7 @@
 constexpr bool EXPAND_TO_MINUS = true;
 constexpr int MOD = (int)1e9 + 7;
 constexpr int MAX_N = 2020202;
-uint_fast64_t fac[MAX_N], finv[MAX_N], inv[MAX_N];
+unsigned long long fac[MAX_N], finv[MAX_N], inv[MAX_N];
 void COMinit() {
     fac[0] = fac[1] = finv[0] = finv[1] = inv[1] = 1;
     for (int i = 2; i < MAX_N; ++i) {
@@ -10,16 +10,16 @@ void COMinit() {
         finv[i] = finv[i - 1] * inv[i] % MOD;
     }
 }
-uint_fast64_t C(int n, int r) {
+unsigned long long C(int n, int r) {
     if (n < r or r < 0) return 0;
     if (n < 0) return EXPAND_TO_MINUS ? ((r % 2 ? -1 : 1) * C(-n + r - 1, r)) : 0;
     return fac[n] * (finv[r] * finv[n - r] % MOD) % MOD;
 }
-uint_fast64_t P(int n, int r) {
+unsigned long long P(int n, int r) {
     if (n < r or r < 0) return 0;
     return fac[n] * finv[n - r] % MOD;
 }
-uint_fast64_t H(int n, int r) {
+unsigned long long H(int n, int r) {
     if (n == 0 and r == 0) return 1;
     return C(n + r - 1, r);
 }

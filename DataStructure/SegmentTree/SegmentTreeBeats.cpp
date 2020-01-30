@@ -1,15 +1,15 @@
 struct SegmentTreeBeats {
-    static const int_fast64_t INF = 1LL << 60;
+    static const long long INF = 1LL << 60;
     struct Node {
         Node *left, *right;
-        int_fast64_t max_v, smax_v, max_c;
-        int_fast64_t min_v, smin_v, min_c;
-        int_fast64_t sum;
-        int_fast64_t len, ladd, lval;
+        long long max_v, smax_v, max_c;
+        long long min_v, smin_v, min_c;
+        long long sum;
+        long long len, ladd, lval;
 
         Node() : left(0), right(0), ladd(0), lval(INF) {}
 
-        void init(int_fast64_t x) {
+        void init(long long x) {
             max_v = min_v = sum = x;
             smax_v = -INF; smin_v = INF;
             max_c = min_c = 1;
@@ -21,7 +21,7 @@ struct SegmentTreeBeats {
             max_c = min_c = 0;
         }
 
-        void update_max(int_fast64_t x) {
+        void update_max(long long x) {
             sum += (x - max_v) * max_c;
             /* */if (max_v ==  min_v) max_v =  min_v = x;
             else if (max_v == smin_v) max_v = smin_v = x;
@@ -29,7 +29,7 @@ struct SegmentTreeBeats {
             if (lval != INF and x < lval) lval = x;
         }
 
-        void update_min(int_fast64_t x) {
+        void update_min(long long x) {
             sum += (x - min_v) * min_c;
             /* */if (max_v ==  min_v) max_v =  min_v = x;
             else if (max_v == smin_v) min_v = smax_v = x;
@@ -37,7 +37,7 @@ struct SegmentTreeBeats {
             if (lval != INF and lval < x) lval = x;
         }
 
-        void addall(int_fast64_t x) {
+        void addall(long long x) {
             max_v += x;
             if (smax_v != -INF) smax_v += x;
             min_v += x;
@@ -47,7 +47,7 @@ struct SegmentTreeBeats {
             else             ladd += x;
         }
 
-        void updateall(int_fast64_t x) {
+        void updateall(long long x) {
             max_v = min_v = x;
             smax_v = -INF; smin_v = INF;
             max_c = min_c = len;
@@ -107,7 +107,7 @@ struct SegmentTreeBeats {
     int n, n0;
     Node *root;
 
-    void _update_min(int_fast64_t x, int a, int b, Node *nd, int l, int r) {
+    void _update_min(long long x, int a, int b, Node *nd, int l, int r) {
         if (b <= l || r <= a || nd -> max_v <= x) return;
         if (a <= l && r <= b && nd -> smax_v < x) {
             nd -> update_max(x);
@@ -119,7 +119,7 @@ struct SegmentTreeBeats {
         nd -> update();
     }
 
-    void _update_max(int_fast64_t x, int a, int b, Node *nd, int l, int r) {
+    void _update_max(long long x, int a, int b, Node *nd, int l, int r) {
         if (b <= l || r <= a || x <= nd -> min_v) return;
         if (a <= l && r <= b && x < nd -> smin_v) {
             nd -> update_min(x);
@@ -131,7 +131,7 @@ struct SegmentTreeBeats {
         nd -> update();
     }
 
-    void _add_val(int_fast64_t x, int a, int b, Node *nd, int l, int r) {
+    void _add_val(long long x, int a, int b, Node *nd, int l, int r) {
         if (b <= l || r <= a) return;
         if (a <= l && r <= b) {
             nd -> addall(x);
@@ -143,7 +143,7 @@ struct SegmentTreeBeats {
         nd -> update();
     }
 
-    void _update_val(int_fast64_t x, int a, int b, Node *nd, int l, int r) {
+    void _update_val(long long x, int a, int b, Node *nd, int l, int r) {
         if (b <= l || r <= a) return;
         if (a <= l && r <= b) {
             nd -> updateall(x);
@@ -155,34 +155,34 @@ struct SegmentTreeBeats {
         nd -> update();
     }
 
-    int_fast64_t _query_max(int a, int b, Node *nd, int l, int r) {
+    long long _query_max(int a, int b, Node *nd, int l, int r) {
         if (b <= l || r <= a) return -INF;
         if (a <= l && r <= b) return nd -> max_v;
         nd -> push();
-        int_fast64_t lv = _query_max(a, b, nd ->  left, l, (l + r) >> 1);
-        int_fast64_t rv = _query_max(a, b, nd -> right, (l + r) >> 1, r);
+        long long lv = _query_max(a, b, nd ->  left, l, (l + r) >> 1);
+        long long rv = _query_max(a, b, nd -> right, (l + r) >> 1, r);
         return max(lv, rv);
     }
 
-    int_fast64_t _query_min(int a, int b, Node *nd, int l, int r) {
+    long long _query_min(int a, int b, Node *nd, int l, int r) {
         if (b <= l || r <= a) return INF;
         if (a <= l && r <= b) return nd -> min_v;
         nd -> push();
-        int_fast64_t lv = _query_min(a, b, nd ->  left, l, (l + r) >> 1);
-        int_fast64_t rv = _query_min(a, b, nd -> right, (l + r) >> 1, r);
+        long long lv = _query_min(a, b, nd ->  left, l, (l + r) >> 1);
+        long long rv = _query_min(a, b, nd -> right, (l + r) >> 1, r);
         return min(lv, rv);
     }
 
-    int_fast64_t _query_sum(int a, int b, Node *nd, int l, int r) {
+    long long _query_sum(int a, int b, Node *nd, int l, int r) {
         if (b <= l || r <= a) return 0;
         if (a <= l && r <= b) return nd -> sum;
         nd -> push();
-        int_fast64_t lv = _query_sum(a, b, nd ->  left, l, (l + r) >> 1);
-        int_fast64_t rv = _query_sum(a, b, nd -> right, (l + r) >> 1, r);
+        long long lv = _query_sum(a, b, nd ->  left, l, (l + r) >> 1);
+        long long rv = _query_sum(a, b, nd -> right, (l + r) >> 1, r);
         return lv + rv;
     }
 
-    SegmentTreeBeats(int n, int_fast64_t val = 0) : n(n) {
+    SegmentTreeBeats(int n, long long val = 0) : n(n) {
         n0 = 1; while (n0 < n) n0 <<= 1;
         Node *nds = new Node[2 * n0];
         root = nds;
@@ -197,7 +197,7 @@ struct SegmentTreeBeats {
         for (int i = n0 - 2; i >= 0; i--) nds[i].update();
     }
     
-    SegmentTreeBeats(int n, vector<int_fast64_t> a) : n(n) {
+    SegmentTreeBeats(int n, vector<long long> a) : n(n) {
         n0 = 1; while (n0 < n) n0 <<= 1;
         Node *nds = new Node[2 * n0];
         root = nds;
@@ -213,13 +213,13 @@ struct SegmentTreeBeats {
         for (int i = n0 - 2; i >= 0; i--) nds[i].update();
     }
 
-    void update_min(int a, int b, int_fast64_t x) { _update_min(x, a, b, root, 0, n0); }
-    void update_max(int a, int b, int_fast64_t x) { _update_max(x, a, b, root, 0, n0); }
-    void    add_val(int a, int b, int_fast64_t x) {    _add_val(x, a, b, root, 0, n0); }
-    void update_val(int a, int b, int_fast64_t x) { _update_val(x, a, b, root, 0, n0); }
-    int_fast64_t query_max(int a, int b) { return _query_max(a, b, root, 0, n0); }
-    int_fast64_t query_min(int a, int b) { return _query_min(a, b, root, 0, n0); }
-    int_fast64_t query_sum(int a, int b) { return _query_sum(a, b, root, 0, n0); }
+    void update_min(int a, int b, long long x) { _update_min(x, a, b, root, 0, n0); }
+    void update_max(int a, int b, long long x) { _update_max(x, a, b, root, 0, n0); }
+    void    add_val(int a, int b, long long x) {    _add_val(x, a, b, root, 0, n0); }
+    void update_val(int a, int b, long long x) { _update_val(x, a, b, root, 0, n0); }
+    long long query_max(int a, int b) { return _query_max(a, b, root, 0, n0); }
+    long long query_min(int a, int b) { return _query_min(a, b, root, 0, n0); }
+    long long query_sum(int a, int b) { return _query_sum(a, b, root, 0, n0); }
 };
 
 /*

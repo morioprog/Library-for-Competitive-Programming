@@ -1,5 +1,5 @@
-inline uint_fast64_t toInt(string s) {
-    uint_fast64_t v;
+inline unsigned long long toInt(string s) {
+    unsigned long long v;
     istringstream sin(s);
     sin >> v;
     return v;

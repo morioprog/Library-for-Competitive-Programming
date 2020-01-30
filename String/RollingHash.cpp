@@ -1,7 +1,7 @@
 template<int mod, int base=10007>
 struct RollingHash {
-    vector<uint_fast64_t> hsh, pwr;
-    uint_fast64_t umod(uint_fast64_t n) { return (n % mod + mod) % mod; }
+    vector<unsigned long long> hsh, pwr;
+    unsigned long long umod(unsigned long long n) { return (n % mod + mod) % mod; }
     RollingHash() {}
     RollingHash(const string &s) {
         int sz = (int)s.size();
@@ -13,22 +13,22 @@ struct RollingHash {
         }
     }
     // [l, r)
-    uint_fast64_t get(int l, int r) {
+    unsigned long long get(int l, int r) {
         return umod(hsh[r] - hsh[l] * pwr[r - l]);
     }
     // h1 <- h2
-    uint_fast64_t join(uint_fast64_t h1, uint_fast64_t h2, int h2_sz) {
+    unsigned long long join(unsigned long long h1, unsigned long long h2, int h2_sz) {
         return umod(h1 * pwr[h2_sz] + h2);
     }
     // [idx, len_s) + [0, idx)
-    uint_fast64_t rotate(uint_fast64_t idx, int len_s) {
+    unsigned long long rotate(unsigned long long idx, int len_s) {
         return join(get(idx, len_s), get(0, idx), idx);
     }
 };
 using RH1 = RollingHash<(int)1e9 + 7>;
 using RH2 = RollingHash<(int)1e9 + 9>;
 using RH = pair<RH1, RH2>;
-using H = pair<uint_fast64_t, uint_fast64_t>;
+using H = pair<unsigned long long, unsigned long long>;
 RH init(const string &s) { return make_pair(RH1(s), RH2(s)); }
 H get(RH &rh, int l, int r) { return make_pair(rh.first.get(l, r), rh.second.get(l, r)); }
 H rotate(RH &rh, int n, int sz) { return make_pair(rh.first.rotate(n, sz), rh.second.rotate(n, sz)); }

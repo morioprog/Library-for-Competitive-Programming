@@ -1,12 +1,12 @@
-class SegmentMap : public map<int_fast64_t, int_fast64_t> {
+struct SegmentMap : public map<long long, long long> {
     bool flagToMergeAdjacentSegment;
     SegmentMap(bool flagToMergeAdjacentSegment) : flagToMergeAdjacentSegment(flagToMergeAdjacentSegment) {}
-    auto get(int_fast64_t p) const {
+    auto get(long long p) const {
         auto it = upper_bound(p);
         if (it == begin() or (--it)->second < p) return end();
         return it;
     }
-    void insert(int_fast64_t l, int_fast64_t r) {
+    void insert(long long l, long long r) {
         auto itl = upper_bound(l), itr = upper_bound(r + flagToMergeAdjacentSegment);
         if (itl != begin()) {
             if ((--itl)->second < l - flagToMergeAdjacentSegment) ++itl;
@@ -18,7 +18,7 @@ class SegmentMap : public map<int_fast64_t, int_fast64_t> {
         }
         (*this)[l] = r;
     }
-    void remove(int_fast64_t l, int_fast64_t r) {
+    void remove(long long l, long long r) {
         auto itl = upper_bound(l), itr = upper_bound(r);
         if (itl != begin()) {
             if ((--itl)->second < l) ++itl;
@@ -29,7 +29,7 @@ class SegmentMap : public map<int_fast64_t, int_fast64_t> {
         if (tl < l) (*this)[tl] = l - 1;
         if (r < tr) (*this)[r + 1] = tr;
     }
-    bool same(int_fast64_t p, int_fast64_t q) const {
+    bool same(long long p, long long q) const {
         const auto&& it = get(p);
         return it != end() and it->first <= q and q <= it->second;
     }

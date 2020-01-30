@@ -23,7 +23,7 @@ namespace FastFourierTransform {
         }
         if (rev) for (int i = 0; i < N; ++i) F[i] /= N;
     }
-    vector<int_fast64_t> Multiply(const vector<int> &A, const vector<int> &B) {
+    vector<long long> Multiply(const vector<int> &A, const vector<int> &B) {
         int sz = 1;
         while (sz < A.size() + B.size() - 1) sz <<= 1;
         vector< C > F(sz), G(sz);
@@ -33,7 +33,7 @@ namespace FastFourierTransform {
         DiscreteFourierTransform(G, false);
         for (int i = 0; i < sz; ++i) F[i] *= G[i];
         DiscreteFourierTransform(F, true);
-        vector<int_fast64_t> X(A.size() + B.size() - 1);
+        vector<long long> X(A.size() + B.size() - 1);
         for (int i = 0; i < A.size() + B.size() - 1; ++i) X[i] = F[i].real() + 0.5;
         return X;
     }
@@ -43,6 +43,6 @@ namespace FastFourierTransform {
 ・高速フーリエ変換
     > O(NlogN)
 [備考] 畳み込み(c_i = Sum[j = 0..i] a_j * b_(i - j))を高速に行える.
-[使用例] vector<int_fast64_t> C = FastFourierTransform::Multiply(A, B);      // AとBの畳み込みの結果をCに代入
+[使用例] vector<long long> C = FastFourierTransform::Multiply(A, B);      // AとBの畳み込みの結果をCに代入
 [参考] https://www.creativ.xyz/fast-fourier-transform/
 */

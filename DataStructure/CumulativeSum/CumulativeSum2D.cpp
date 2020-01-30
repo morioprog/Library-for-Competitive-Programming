@@ -1,4 +1,4 @@
-template<typename T = int_fast64_t> struct CumulativeSum2D {
+template<typename T = long long> struct CumulativeSum2D {
     vector< vector< T > > data;
     CumulativeSum2D(int H, int W) : data(H + 1, vector<T>(W + 1, 0)) {}
     void add(int x, int y, int z) {

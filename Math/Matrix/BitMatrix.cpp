@@ -22,7 +22,7 @@ inline BitMatrix operator*(BitMatrix A, BitMatrix B) {
     for (int i = 0; i <  R.H; ++i) for (int j = 0; j <  R.W; ++j)  R[i][j] = ((A[i] & tB[j]).count() & 1);
     return R;
 }
-inline BitMatrix pow(BitMatrix A, uint_fast64_t n) {
+inline BitMatrix pow(BitMatrix A, unsigned long long n) {
     BitMatrix R(A.H, A.H);
     for (int i = 0; i < A.H; ++i) R[i][i] = 1;
     while (n > 0) {

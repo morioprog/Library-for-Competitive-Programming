@@ -1,7 +1,7 @@
 template< int MODULO > struct ModInt {
-    using int64 = int_fast64_t;
-    using uint32 = uint_fast32_t;
-    using uint64 = uint_fast64_t;
+    using int64 = long long;
+    using uint32 = unsigned int;
+    using uint64 = unsigned long long;
     uint64 x; ModInt() : x(0) {}
     ModInt(int64 y) : x(set(y % MODULO + MODULO)) {}
     static uint64 set(const int64 &y) { return (y < MODULO) ? y : y - MODULO; }

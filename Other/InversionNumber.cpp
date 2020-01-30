@@ -1,5 +1,5 @@
-template<typename T> int_fast64_t InversionNumber(vector< T > &v) {
-    int_fast64_t sz = v.size(), ret = 0;
+template<typename T> long long InversionNumber(vector< T > &v) {
+    long long sz = v.size(), ret = 0;
     vector< T > rev, v_cp = v; sort(v_cp.begin(), v_cp.end());
     for (auto &e : v) rev.emplace_back(lower_bound(v_cp.begin(), v_cp.end(), e) - v_cp.begin());
     BinaryIndexedTree< T > bit(sz);
