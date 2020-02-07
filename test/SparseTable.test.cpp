@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -6,9 +6,10 @@ using namespace std;
 // #include "../DataStructure/SparseTable.cpp"
 
 int main() {
-    int N, Q;
-    cin >> N >> Q;
-    cout << N + Q << endl;
+    cout << "Hello World" << endl;
+
+    // int N, Q;
+    // cin >> N >> Q;
 
     // vector<int> A(N);
     // for (auto& e: A) cin >> e;
