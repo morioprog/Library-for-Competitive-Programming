@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// #include "../DataStructure/SparseTable.cpp"
+#include "../DataStructure/SparseTable.cpp"
 
 int main() {
     cout << "Hello World" << endl;
