@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "SparseTable.cpp"
+#include "../../DataStructure/SparseTable.cpp"
 
 int main() {
     int N, Q;
