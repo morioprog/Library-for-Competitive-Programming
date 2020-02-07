@@ -1,9 +1,9 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
+#include "SparseTable.cpp"
+
 #include <bits/stdc++.h>
 using namespace std;
-
-#include "SparseTable.cpp"
 
 int main() {
     int N, Q;
