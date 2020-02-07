@@ -273,7 +273,7 @@ libraries = [
     [
         "多倍長整数 / 浮動小数点数",
         ["multiprecision", "tabaichou"],
-        "Other/MultiPrecision.cpp"
+        "Other/MultiPrecision.tmp"
     ],
 ]
 
