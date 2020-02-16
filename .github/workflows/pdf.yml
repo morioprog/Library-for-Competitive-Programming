@@ -1,0 +1,35 @@
+name: MakePDF
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Pull docker (paperist/alpine-texlive-ja)
+        uses: docker://paperist/alpine-texlive-ja
+      
+      - name: Set up Python
+        uses: actions/setup-python@v1
+
+      - run: mkdir output
+
+      - name: Make TeX
+        run: python3 generate_tex.py > library.tex
+
+      - name: Make PDF
+        run: |
+          docker run --rm -v "`pwd`":/workdir paperist/alpine-texlive-ja uplatex library.tex
+          docker run --rm -v "`pwd`":/workdir paperist/alpine-texlive-ja dvipdfmx library.dvi
+      
+      - name: Move PDF
+        run: mv library.pdf output
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@master
+        with:
+          name: output
+          path: output
