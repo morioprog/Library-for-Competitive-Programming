@@ -1,0 +1,176 @@
+テンプレート:
+  - name: Template
+    prefix: [template]
+    path: Template/Main.cpp
+  - name: Template (Short)
+    prefix: [template]
+    path: Template/Short.cpp
+
+アルゴリズム:
+  - name: めぐる式二分探索
+    prefix: [meguru]
+    path: Algorithm/Meguru.cpp
+  - name: 平方分割
+    prefix: [heihoubunkatu, square root decomposition]
+    path: Algorithm/SquareRootDecomposition.cpp
+
+畳み込み:
+  - name: 高速フーリエ変換による畳み込み
+    prefix: [convolution, fastfouriertransform]
+    path: Convolution/FastFourierTransform.cpp
+
+データ構造:
+  - 累積和:
+    - name: 1次元累積和
+      prefix: [cumulativesum, imos, accumulate]
+      path: DataStructure/CumulativeSum/CumulativeSum1D.cpp
+    - name: 2次元累積和
+      prefix: [cumulativesum2D, imos, accumulate]
+      path: DataStructure/CumulativeSum/CumulativeSum2D.cpp
+  - セグメント木:
+    - name: セグメント木
+      prefix: [data structure, segment tree]
+      path: DataStructure/SegmentTree/SegmentTree.cpp
+    - name: 遅延セグメント木
+      prefix: [data structure, segment tree, lazy segment tree]
+      path: DataStructure/SegmentTree/LazySegmentTree.cpp
+    - name: Segment Tree Beats
+      prefix: [data structure, segment tree, beats]
+      path: DataStructure/SegmentTree/SegmentTreeBeats.cpp
+  - SWAG:
+    - name: Queue Aggregation
+      prefix: [data structure, queue aggregation, sliding window aggregation]
+      path: DataStructure/SlidingWindowAggregation/QueueAggregation.cpp
+  - UnionFind:
+    - name: UnionFindTree
+      prefix: [data structure, unionfind]
+      path: DataStructure/UnionFind/UnionFind.cpp
+    - name: 重み付きUnionFindTree
+      prefix: [data structure, unionfind, omomituki unionfind]
+      path: DataStructure/UnionFind/WeightedUnionFind.cpp
+  - name: Binary Indexed Tree
+    prefix: [data structure, binary indexed tree]
+    path: DataStructure/BinaryIndexedTree.cpp
+  - name: Median PriQue
+    prefix: [data structure, median prique]
+    path: DataStructure/MedianPrique.cpp
+  - name: Segment Map
+    prefix: [data structure, segment map, map]
+    path: DataStructure/SegmentMap.cpp
+  - name: Sparse Table
+    prefix: [data structure, sparse table]
+    path: DataStructure/SparseTable.cpp
+  - name: Wavelet Matrix
+    prefix: [data structure, wavelet matrix]
+    path: DataStructure/WaveletMatrix.cpp
+
+グラフ:
+  - name: グラフの宣言
+    prefix: [graph]
+    path: Graph/Template.cpp
+  - 二部グラフ:
+    - name: 二部グラフの判定
+      prefix: [graph, bipartite, nibugurahu]
+      path: Graph/BipartiteGraph/BipartiteGraphCheck.cpp
+    - name: 二部グラフの最大マッチング
+      prefix: [graph, bipartite, nibugurahu, matching]
+      path: Graph/BipartiteGraph/BipartiteMatching.cpp
+  - 最大流:
+    - name: 最大流 Dinic O(EV^2)
+      prefix: [graph, dinic, maximum flow, flow]
+      path: Graph/MaximumFlow/Dinic.cpp
+    - name: 最大流 FordFulkerson O(EF)
+      prefix: [graph, fordfulkerson, maximum flow, flow]
+      path: Graph/MaximumFlow/FordFulkerson.cpp
+  - 最小費用流:
+    - name: 最小費用流 PrimalDual O(FElogV)
+      prefix: [graph, primal dual, min cost flow, flow]
+      path: Graph/MinCostFlow/PrimalDual.cpp
+  - 最小全域木:
+    - name: 最小全域木 Kruskal O(ElogV)
+      prefix: [graph, kruskal, tree, minimum spanning tree]
+      path: Graph/MinimumSpanningTree/Kruskal.cpp
+  - 最短路:
+    - name: BellmanFord O(EV)
+      prefix: [graph, bellmanford]
+      path: Graph/ShortestPath/BellmanFord.cpp
+    - name: Dijkstra O(ElogV)
+      prefix: [graph, dijkstra]
+      path: Graph/ShortestPath/Dijkstra.cpp
+    - name: WarshallFloyd O(V^3)
+      prefix: [graph, warshallfloyd]
+      path: Graph/ShortestPath/WarshallFloyd.cpp
+  - HL分解:
+    - name: HeavyLightDecomposition / LCA
+      prefix: [graph, heavylightdecomposition, lowestcommonancestor]
+      path: Graph/HeavyLightDecomposition/HeavyLightDecomposition.cpp
+  - その他:
+    - name: トポロジカルソート O(E + V)
+      prefix: [graph, topological sort]
+      path: Graph/Other/TopologicalSort.cpp
+
+数学:
+  - 組み合わせ:
+    - name: 組み合わせ (逆元)
+      prefix: [math, combination, inverse]
+      path: Math/Combination/Inverse.cpp
+    - name: 組み合わせ (パスカルの三角形)
+      prefix: [math, combination, pascal]
+      path: Math/Combination/Pascal.cpp
+  - 素数:
+    - name: 約数列挙 O(√n)
+      prefix: [math, divisor, prime]
+      path: Math/Prime/Divisor.cpp
+    - name: エラトステネスの篩 O(NloglogN)
+      prefix: [math, eratosthenes, prime]
+      path: Math/Prime/Eratosthenes.cpp
+    - name: 素数判定 O(√n)
+      prefix: [math, prime]
+      path: Math/Prime/PrimeCheck.cpp
+    - name: 素因数分解(約数の個数) O(√n)
+      prefix: [math, prime, divisor]
+      path: Math/Prime/PrimeFactor.cpp
+  - 行列:
+    - name: 行列演算
+      prefix: [math, matrix]
+      path: Math/Matrix/Matrix.cpp
+    - name: F2上の行列演算
+      prefix: [math, matrix, bit]
+      path: Math/Matrix/BitMatrix.cpp
+  - name: ModInt
+    prefix: [math, modint]
+    path: Math/Modint.cpp
+  - name: 分数
+    prefix: [math, fraction]
+    path: Math/Fraction.cpp
+
+文字列:
+  - name: ローリングハッシュ
+    prefix: [string, rolling hash]
+    path: String/RollingHash.cpp
+  - name: Suffix Array
+    prefix: [string, suffix array]
+    path: String/SuffixArray.cpp
+
+その他:
+  - name: 座標圧縮 O(NlogN)
+    prefix: [compression, zaatu]
+    path: Other/Compression.cpp
+  - name: 文字列と整数同士の変換
+    prefix: [conversion, string, integer]
+    path: Other/Conversion.cpp
+  - name: サイコロ
+    prefix: [dice]
+    path: Other/Dice.cpp
+  - name: ランレングス圧縮
+    prefix: [groupby, run length compression]
+    path: Other/Groupby.cpp
+  - name: 転倒数
+    prefix: [math, inversion number, tentousuu]
+    path: Other/InversionNumber.cpp
+  - name: LimitInt
+    prefix: [math, limitint]
+    path: Other/LimitInt.cpp
+  - name: 多倍長整数 / 浮動小数点数
+    prefix: [multiprecision, tabaichou]
+    path: Other/MultiPrecision.tmp
