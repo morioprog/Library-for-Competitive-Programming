@@ -21,10 +21,7 @@ def printHeader():
 }
 \\begin{document}
 \\maketitle
-\\begin{spacing}{0}
-    \\setcounter{tocdepth}{3}
-    \\tableofcontents
-\\end{spacing}
+\\tableofcontents
 ''')
 
 def printFooter():
