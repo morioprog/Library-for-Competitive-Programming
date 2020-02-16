@@ -14,6 +14,9 @@ jobs:
       
       - name: Set up Python
         uses: actions/setup-python@v1
+      
+      - name: Install library for YAML
+        run: pip3 install pyyaml
 
       - run: mkdir output
 
