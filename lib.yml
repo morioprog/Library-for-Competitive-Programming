@@ -121,7 +121,7 @@
     - name: 約数列挙 $O(\sqrt{n})$
       prefix: [math, divisor, prime]
       path: Math/Prime/Divisor.cpp
-    - name: エラトステネスの篩 $O(N\log\logN)$
+    - name: エラトステネスの篩 $O(N\log\log N)$
       prefix: [math, eratosthenes, prime]
       path: Math/Prime/Eratosthenes.cpp
     - name: 素数判定 $O(\sqrt{n})$
