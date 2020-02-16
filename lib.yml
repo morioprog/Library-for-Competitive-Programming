@@ -76,28 +76,28 @@
       prefix: [graph, bipartite, nibugurahu, matching]
       path: Graph/BipartiteGraph/BipartiteMatching.cpp
   - 最大流:
-    - name: 最大流 Dinic O(EV^2)
+    - name: 最大流 Dinic $O(EV^2)$
       prefix: [graph, dinic, maximum flow, flow]
       path: Graph/MaximumFlow/Dinic.cpp
-    - name: 最大流 FordFulkerson O(EF)
+    - name: 最大流 FordFulkerson $O(EF)$
       prefix: [graph, fordfulkerson, maximum flow, flow]
       path: Graph/MaximumFlow/FordFulkerson.cpp
   - 最小費用流:
-    - name: 最小費用流 PrimalDual O(FElogV)
+    - name: 最小費用流 PrimalDual $O(FElogV)$
       prefix: [graph, primal dual, min cost flow, flow]
       path: Graph/MinCostFlow/PrimalDual.cpp
   - 最小全域木:
-    - name: 最小全域木 Kruskal O(ElogV)
+    - name: 最小全域木 Kruskal $O(ElogV)$
       prefix: [graph, kruskal, tree, minimum spanning tree]
       path: Graph/MinimumSpanningTree/Kruskal.cpp
   - 最短路:
-    - name: BellmanFord O(EV)
+    - name: BellmanFord $O(EV)$
       prefix: [graph, bellmanford]
       path: Graph/ShortestPath/BellmanFord.cpp
-    - name: Dijkstra O(ElogV)
+    - name: Dijkstra $O(ElogV)$
       prefix: [graph, dijkstra]
       path: Graph/ShortestPath/Dijkstra.cpp
-    - name: WarshallFloyd O(V^3)
+    - name: WarshallFloyd $O(V^3)$
       prefix: [graph, warshallfloyd]
       path: Graph/ShortestPath/WarshallFloyd.cpp
   - HL分解:
@@ -105,7 +105,7 @@
       prefix: [graph, heavylightdecomposition, lowestcommonancestor]
       path: Graph/HeavyLightDecomposition/HeavyLightDecomposition.cpp
   - その他:
-    - name: トポロジカルソート O(E + V)
+    - name: トポロジカルソート $O(E+V)$
       prefix: [graph, topological sort]
       path: Graph/Other/TopologicalSort.cpp
 
@@ -118,16 +118,16 @@
       prefix: [math, combination, pascal]
       path: Math/Combination/Pascal.cpp
   - 素数:
-    - name: 約数列挙 O(√n)
+    - name: 約数列挙 $O(\sqrt{n})$
       prefix: [math, divisor, prime]
       path: Math/Prime/Divisor.cpp
-    - name: エラトステネスの篩 O(NloglogN)
+    - name: エラトステネスの篩 $O(N\log\logN)$
       prefix: [math, eratosthenes, prime]
       path: Math/Prime/Eratosthenes.cpp
-    - name: 素数判定 O(√n)
+    - name: 素数判定 $O(\sqrt{n})$
       prefix: [math, prime]
       path: Math/Prime/PrimeCheck.cpp
-    - name: 素因数分解(約数の個数) O(√n)
+    - name: 素因数分解(約数の個数) $O(\sqrt{n})$
       prefix: [math, prime, divisor]
       path: Math/Prime/PrimeFactor.cpp
   - 行列:
