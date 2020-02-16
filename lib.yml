@@ -153,7 +153,7 @@
     path: String/SuffixArray.cpp
 
 その他:
-  - name: 座標圧縮 O(NlogN)
+  - name: 座標圧縮 $O(N\log N)$
     prefix: [compression, zaatu]
     path: Other/Compression.cpp
   - name: 文字列と整数同士の変換
