@@ -7,7 +7,7 @@ def printHeader():
 \\usepackage{listings, jlisting}
 \\usepackage{colortbl}
 \\title{Library for Competitive Programming}
-\\author{morio__}
+\\author{morio\_\_}
 \\lstset{
     language=C++,
     numbers=left,
@@ -37,7 +37,7 @@ def printTag(tag, s):
 
 def printFile(f, s):
     printTag(s, f['name'])
-    print('\\lstinputlisting{}'.format(f['path']))
+    print('\\lstinputlisting{{{}}}'.format(f['path']))
 
 if __name__ == '__main__':
     printHeader()
