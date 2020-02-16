@@ -7,7 +7,7 @@ def printHeader():
 \\usepackage{listings, jlisting}
 \\usepackage{colortbl}
 \\title{Library for Competitive Programming}
-\\author{morio\_\_}
+\\author{morio\\_\\_}
 \\lstset{
     language=C++,
     numbers=left,
