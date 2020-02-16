@@ -21,6 +21,7 @@ def printHeader():
 }
 \\begin{document}
 \\maketitle
+\\setcounter{tocdepth}{3}
 \\tableofcontents
 ''')
 
