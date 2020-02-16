@@ -1,6 +1,6 @@
-# Library-for-Competitive-Programming
+# library
 
-[![verify](https://github.com/morioprog/Library-for-Competitive-Programming/workflows/verify/badge.svg)](https://github.com/morioprog/Library-for-Competitive-Programming/actions?query=workflow%3Averify) [![make snippet JSON](https://github.com/morioprog/Library-for-Competitive-Programming/workflows/make%20snippet%20JSON/badge.svg)](https://github.com/morioprog/Library-for-Competitive-Programming/actions?query=workflow%3A%22make+snippet+JSON%22) [![MakePDF](https://github.com/morioprog/Library-for-Competitive-Programming/workflows/MakePDF/badge.svg)](https://github.com/morioprog/Library-for-Competitive-Programming/actions?query=workflow%3AMakePDF) [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://morioprog.github.io/Library-for-Competitive-Programming/) 
+[![verify](https://github.com/morioprog/library/workflows/verify/badge.svg)](https://github.com/morioprog/library/actions?query=workflow%3Averify) [![make snippet JSON](https://github.com/morioprog/library/workflows/make%20snippet%20JSON/badge.svg)](https://github.com/morioprog/library/actions?query=workflow%3A%22make+snippet+JSON%22) [![MakePDF](https://github.com/morioprog/library/workflows/MakePDF/badge.svg)](https://github.com/morioprog/library/actions?query=workflow%3AMakePDF) [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://morioprog.github.io/library/) 
 
 競プロのライブラリ
 
