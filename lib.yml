@@ -83,18 +83,18 @@
       prefix: [graph, fordfulkerson, maximum flow, flow]
       path: Graph/MaximumFlow/FordFulkerson.cpp
   - 最小費用流:
-    - name: 最小費用流 PrimalDual $O(FElogV)$
+    - name: 最小費用流 PrimalDual $O(FE\log V)$
       prefix: [graph, primal dual, min cost flow, flow]
       path: Graph/MinCostFlow/PrimalDual.cpp
   - 最小全域木:
-    - name: 最小全域木 Kruskal $O(ElogV)$
+    - name: 最小全域木 Kruskal $O(E\log V)$
       prefix: [graph, kruskal, tree, minimum spanning tree]
       path: Graph/MinimumSpanningTree/Kruskal.cpp
   - 最短路:
     - name: BellmanFord $O(EV)$
       prefix: [graph, bellmanford]
       path: Graph/ShortestPath/BellmanFord.cpp
-    - name: Dijkstra $O(ElogV)$
+    - name: Dijkstra $O(E\log V)$
       prefix: [graph, dijkstra]
       path: Graph/ShortestPath/Dijkstra.cpp
     - name: WarshallFloyd $O(V^3)$
