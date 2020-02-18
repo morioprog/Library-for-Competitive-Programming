@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#4afa80e77a07f7488ce4d1bdd8c4977a">Algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/Algorithm/Meguru.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 01:49:29+09:00
+    - Last commit date: 2020-02-18 14:42:09+09:00
 
 
 
@@ -44,11 +44,7 @@ layout: default
 long long ok = $1, ng = $2;
 while (abs(ok - ng) > 1) {
     long long mid = (ok + ng) >> 1;
-    if (check(mid)) {
-        ok = mid;
-    } else {
-        ng = mid;
-    }
+    (check(mid) ? ok : ng) = mid;
 }
 
 ```
@@ -61,11 +57,7 @@ while (abs(ok - ng) > 1) {
 long long ok = $1, ng = $2;
 while (abs(ok - ng) > 1) {
     long long mid = (ok + ng) >> 1;
-    if (check(mid)) {
-        ok = mid;
-    } else {
-        ng = mid;
-    }
+    (check(mid) ? ok : ng) = mid;
 }
 
 ```
