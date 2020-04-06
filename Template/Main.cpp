@@ -1,9 +1,13 @@
+// #pragma GCC target ("avx")
+// #pragma GCC optimize("Ofast")
+// #pragma GCC optimize("unroll-loops")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #include <bits/stdc++.h>
 using namespace std;
 // #define int long long
 // #define endl '\n'
 
-//TEMPLATE START---------------8<---------------8<---------------8<---------------8<---------------//
+#pragma region TEMPLATE
 
 /* TYPE */
 typedef long long ll;       typedef long double ld;
@@ -84,6 +88,8 @@ template<typename Head, typename... Tail> void dump(Head&& head, Tail&&... tail)
 #define debug(...)
 #endif
 /* OTHER */
+#define fi              first
+#define se              second
 #define MP              make_pair
 #define MT              make_tuple
 #define tmax(x, y, z)   max((x), max((y), (z)))
@@ -103,7 +109,7 @@ struct abracadabra {
     };
 } ABRACADABRA;
 
-//TEMPLATE END---------------8<---------------8<---------------8<---------------8<---------------//
+#pragma endregion
 
 signed main() {
 
