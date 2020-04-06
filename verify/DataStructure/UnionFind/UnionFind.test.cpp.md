@@ -29,6 +29,7 @@ layout: default
 
 <a href="../../../index.html">Back to top page</a>
 
+* category: <a href="../../../index.html#b443a6615f54d47cc94a593840724581">DataStructure/UnionFind</a>
 * <a href="{{ site.github.repository_url }}/blob/master/DataStructure/UnionFind/UnionFind.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-02-07 23:35:22+09:00
 

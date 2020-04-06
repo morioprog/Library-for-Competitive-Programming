@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#278c491bdd8a53618c149c4ac790da34">Template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/Template/Main.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-01-31 01:14:18+09:00
+    - Last commit date: 2020-04-07 01:48:05+09:00
 
 
 
@@ -41,12 +41,16 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// #pragma GCC target ("avx")
+// #pragma GCC optimize("Ofast")
+// #pragma GCC optimize("unroll-loops")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #include <bits/stdc++.h>
 using namespace std;
 // #define int long long
 // #define endl '\n'
 
-//TEMPLATE START---------------8<---------------8<---------------8<---------------8<---------------//
+#pragma region TEMPLATE
 
 /* TYPE */
 typedef long long ll;       typedef long double ld;
@@ -127,6 +131,8 @@ template<typename Head, typename... Tail> void dump(Head&& head, Tail&&... tail)
 #define debug(...)
 #endif
 /* OTHER */
+#define fi              first
+#define se              second
 #define MP              make_pair
 #define MT              make_tuple
 #define tmax(x, y, z)   max((x), max((y), (z)))
@@ -146,7 +152,7 @@ struct abracadabra {
     };
 } ABRACADABRA;
 
-//TEMPLATE END---------------8<---------------8<---------------8<---------------8<---------------//
+#pragma endregion
 
 signed main() {
 
@@ -161,12 +167,16 @@ signed main() {
 {% raw %}
 ```cpp
 #line 1 "Template/Main.cpp"
+// #pragma GCC target ("avx")
+// #pragma GCC optimize("Ofast")
+// #pragma GCC optimize("unroll-loops")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #include <bits/stdc++.h>
 using namespace std;
 // #define int long long
 // #define endl '\n'
 
-//TEMPLATE START---------------8<---------------8<---------------8<---------------8<---------------//
+#pragma region TEMPLATE
 
 /* TYPE */
 typedef long long ll;       typedef long double ld;
@@ -247,6 +257,8 @@ template<typename Head, typename... Tail> void dump(Head&& head, Tail&&... tail)
 #define debug(...)
 #endif
 /* OTHER */
+#define fi              first
+#define se              second
 #define MP              make_pair
 #define MT              make_tuple
 #define tmax(x, y, z)   max((x), max((y), (z)))
@@ -266,7 +278,7 @@ struct abracadabra {
     };
 } ABRACADABRA;
 
-//TEMPLATE END---------------8<---------------8<---------------8<---------------8<---------------//
+#pragma endregion
 
 signed main() {
 
